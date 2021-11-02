@@ -1,4 +1,4 @@
-/* const modal = document.createElement('section');
+/*export const modal = document.createElement('section');
 modal.className = 'modal';
 modal.innerHTML = `
 <div class="container">
@@ -7,6 +7,7 @@ modal.innerHTML = `
   </div>
   <div class="input-container">
     <input type="text" id="name-register" placeholder="Nombre">
+
     <input type="email" id="mail-register" placeholder="correo@example.com">
     <input type="password" id="password-register" placeholder="contraseña">
   </div>
@@ -14,5 +15,4 @@ modal.innerHTML = `
     <button id="btnRegister" class="boton-register">Crear Cuenta</button>
   </div>
 </div>
-`;
-export default modal; */
+`;*/
