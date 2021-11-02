@@ -1,5 +1,5 @@
-/*const modal = document.createElement("section");
-modal.className = "modal";
+/*export const modal = document.createElement('section');
+modal.className = 'modal';
 modal.innerHTML = `
 <div class="container">
   <div class="container-register">
@@ -14,6 +14,4 @@ modal.innerHTML = `
     <button id="btnRegister" class="boton-register">Crear Cuenta</button>
   </div>
 </div>
-`;
-
-export default modal;*/
+`;*/
