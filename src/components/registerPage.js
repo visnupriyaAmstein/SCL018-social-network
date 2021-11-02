@@ -7,12 +7,12 @@ modal.innerHTML = `
   </div>
   <div class="input-container">
     <input type="text" id="name-register" placeholder="Nombre">
-    <input type="text" id="mail-register" placeholder="correo@example.com">
-    <input type="text" id="password-register" placeholder="contraseña">
+
+    <input type="email" id="mail-register" placeholder="correo@example.com">
+    <input type="password" id="password-register" placeholder="contraseña">
   </div>
   <div class="boton-register">
     <button id="btnRegister" class="boton-register">Crear Cuenta</button>
   </div>
 </div>
 `;*/
-

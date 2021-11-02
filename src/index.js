@@ -21,4 +21,3 @@ export const routes = (hash) => {
       /*case '#/modal':
       root.innerHTML = modal();
       break;*/
-

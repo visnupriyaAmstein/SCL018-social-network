@@ -1,4 +1,5 @@
 export const introPage = () => {
+
 // Contenedor principal.
   const introContainer = document.createElement('main');
   introContainer.className = 'introContainer';
@@ -37,4 +38,3 @@ export const introPage = () => {
   return introContainer;
   
 };
-
