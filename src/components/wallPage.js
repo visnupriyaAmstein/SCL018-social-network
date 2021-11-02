@@ -1,4 +1,4 @@
-import introPage from "./IntroPage";
+/*import introPage from "./IntroPage";
 
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
@@ -14,4 +14,5 @@ export const wallPage = () => {
   logo.src = "images/logo-petsbook.png";
 
   return wallContainer + introPage;
-};
+};*/
+

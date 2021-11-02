@@ -7,7 +7,6 @@ modal.innerHTML = `
   </div>
   <div class="input-container">
     <input type="text" id="name-register" placeholder="Nombre">
-
     <input type="email" id="mail-register" placeholder="correo@example.com">
     <input type="password" id="password-register" placeholder="contraseña">
   </div>
