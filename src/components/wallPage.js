@@ -25,4 +25,3 @@ export const wallPage = () => {
 
   return wallContainer + introPage;
 };*/
-
