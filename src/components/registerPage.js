@@ -1,4 +1,5 @@
 import { userRegister } from "../lib/index.js";
+
 const root = document.getElementById("root");
 export const registerPage = () => {
   const register = document.createElement("section");
