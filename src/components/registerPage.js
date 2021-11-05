@@ -2,8 +2,8 @@ import { userRegister } from "../lib/index.js";
 
 const root = document.getElementById("root");
 export const registerPage = () => {
-  const register = document.createElement('section');
-  register.className = 'modal';
+  const register = document.createElement("section");
+  register.className = "modal";
   register.innerHTML = `
     <div class="container">
     <div class="container-register">
@@ -17,12 +17,11 @@ export const registerPage = () => {
     <div class="boton-register">
       <button id="btnRegister" class="boton-register">Crear Cuenta</button>
     </div>
-  </div>
-`;
-root.appendChild(register);
-
-document.querySelector("#btnRegister").addEventListener("click", ()=>{
-  userRegister();
-});
-return registerPage;
-}
+   </div>
+   `;
+  root.appendChild(register);
+  document.querySelector("#btnRegister").addEventListener("click", () => {
+    userRegister();
+  });
+  return registerPage;
+};

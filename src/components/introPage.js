@@ -1,5 +1,5 @@
-import { userLogin } from "../lib/index.js"
-import { loginWithGoogle } from "../lib/index.js"
+import { userLogin } from "../lib/index.js";
+import { loginWithGoogle } from "../lib/index.js";
 
 const root = document.getElementById("root");
 export const introPage = () => {
@@ -33,16 +33,16 @@ export const introPage = () => {
   <div class="btn-iniciarSesion">
     <button id="btnLogin" class="btn-iniciar">Iniciar Sesión</button>
   </div>
-  <button id="btnGoogle" class="btn-google"></button>
+  <button id="btnGoogle" class="btn-google" ">google</button>
   //   <h3>¿No tienes cuenta ?</h3>
   //   <button id="register" class="register">Registrate</button>
   </div>`;
   section.innerHTML = intro;
   introContainer.appendChild(section);
 
-  document.querySelector("#btnLogin").addEventListener('click', () =>{
+  document.querySelector("#btnLogin").addEventListener("click", () => {
     userLogin();
-  })
+  });
   document.querySelector("#register").addEventListener("click", () => {
     window.location.hash = "#/registerPage";
   });
