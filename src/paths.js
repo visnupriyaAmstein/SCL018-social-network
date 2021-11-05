@@ -15,7 +15,7 @@ export const routes = (hash) => {
   }
 };
 
-/*export const routes = (hash) => {
+/*export  const routes = (hash) => {
     const root = document.getElementById('root');
     switch (hash) {
       case '':

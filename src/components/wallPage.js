@@ -15,9 +15,9 @@ export const wallPage = () => {
   logo.src = "images/logo-petsbook.png";
   header.appenChild(logo);
 
-  const home = document.createElement('section');
-  home.className = 'homeSection';
-  const post =`
+  const home = document.createElement("section");
+  home.className = "homeSection";
+  const post = `
   <div class="post-box">
   <p>holaa</p>
   <form id="postBox" class="container-post">
