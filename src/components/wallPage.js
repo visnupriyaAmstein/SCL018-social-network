@@ -1,9 +1,10 @@
-/*import introPage from "./IntroPage";
-
+//import introPage from "./IntroPage";
+const root = document.getElementById("root");
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
   wallContainer.className = "wallContainer";
   wallContainer.id = "wallContainer";
+  root.appenChild(wallContainer);
 
   const header = document.createElement("wallHeader");
   header.className = "wallHeader";
@@ -18,10 +19,12 @@ export const wallPage = () => {
   home.className = 'homeSection';
   const post =`
   <div class="post-box">
+  <p>holaa</p>
   <form id="postBox" class="container-post">
   </form>
   </div>`
-  
+  home.innerHTML = post;
+  wallContainer.appendChild(home);
 
-  return wallContainer + introPage;
-};*/
+  return wallContainer ;
+};
