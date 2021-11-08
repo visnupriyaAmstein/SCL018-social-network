@@ -15,7 +15,7 @@ export const introPage = () => {
 
   const logo = document.createElement("img");
   logo.className = "introLogo";
-  logo.src = "images/logo-petsbook.png";
+  logo.src = "images/logo.png";
   header.appendChild(logo);
 
   // sección

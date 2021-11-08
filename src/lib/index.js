@@ -19,12 +19,6 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 console.log(app);
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
-const provider = new GoogleAuthProvider(app);
-console.log(app);
-
 export const userRegister = () => {
   document.querySelector("#btnRegister").addEventListener('click', () => {
     //const name = document.getElementById("nameRegister").value;
