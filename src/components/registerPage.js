@@ -1,9 +1,10 @@
 import { userRegister } from "../lib/index.js"
 const root = document.getElementById("root");
 export const registerPage = () => {
-  const register = document.createElement('section');
-  register.className = 'modal';
-  register.innerHTML = `
+  const registerOne = document.createElement('section');
+  registerOne.className = 'registerOne';
+  registerOne.id = "registerOne"
+  registerOne.innerHTML = `
     <div class="container">
     <div class="container-register">
       <h1>REGISTRATE</h1>
@@ -18,9 +19,10 @@ export const registerPage = () => {
     </div>
    </div>
    `;
-   root.appendChild(register);
+   root.appendChild(registerOne);
    document.querySelector("#btnRegister").addEventListener('click', () =>{
     userRegister();
+   // window.location.hash = "#/introPage";
    })
    return registerPage;
 }
