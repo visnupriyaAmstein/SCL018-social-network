@@ -1,9 +1,14 @@
-import { userRegister } from "../lib/index.js"
+import { userRegister } from "../lib/index.js";
 const root = document.getElementById("root");
 export const registerPage = () => {
-  const registerOne = document.createElement('section');
-  registerOne.className = 'registerOne';
-  registerOne.id = "registerOne"
+  const logo = document.createElement("img");
+  logo.className = "introLogo";
+  logo.src = "images/logo.png";
+  root.appendChild(logo);
+
+  const registerOne = document.createElement("section");
+  registerOne.className = "registerOne";
+  registerOne.id = "registerOne";
   registerOne.innerHTML = `
     <div class="container">
     <div class="container-register">
@@ -14,11 +19,12 @@ export const registerPage = () => {
      <input type="email" id="mailRegister" placeholder="correo@example.com">
       <input type="password" id="passwordRegister" placeholder="contraseña">
     </div>
-    <div class="boton-register">
+    <div>
       <button id="btnRegister" class="boton-register">Crear Cuenta</button>
     </div>
    </div>
    `;
+
    root.appendChild(registerOne);
    document.querySelector("#btnRegister").addEventListener('click', () =>{
     userRegister();
