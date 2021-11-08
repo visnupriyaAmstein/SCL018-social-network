@@ -24,10 +24,11 @@ export const registerPage = () => {
     </div>
    </div>
    `;
-  root.appendChild(registerOne);
-  document.querySelector("#btnRegister").addEventListener("click", () => {
+
+   root.appendChild(registerOne);
+   document.querySelector("#btnRegister").addEventListener('click', () =>{
     userRegister();
-    // window.location.hash = "#/introPage";
-  });
-  return registerPage;
-};
+   // window.location.hash = "#/introPage";
+   })
+   return registerPage;
+}
