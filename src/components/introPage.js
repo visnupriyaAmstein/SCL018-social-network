@@ -1,7 +1,7 @@
 import { userLogin } from "../lib/index.js";
 import { loginWithGoogle } from "../lib/index.js";
 
-const root = document.getElementById("root")
+const root = document.getElementById("root");
 export const introPage = () => {
   // Contenedor principal.
   const introContainer = document.createElement("main");
@@ -15,7 +15,7 @@ export const introPage = () => {
 
   const logo = document.createElement("img");
   logo.className = "introLogo";
-  logo.src = "images/logo-petsbook.png";
+  logo.src = "images/logo.png";
   header.appendChild(logo);
 
   // sección
@@ -40,9 +40,9 @@ export const introPage = () => {
   section.innerHTML = intro;
   introContainer.appendChild(section);
 
-  document.querySelector("#btnLogin").addEventListener('click', () =>{
+  document.querySelector("#btnLogin").addEventListener("click", () => {
     userLogin();
-  })
+  });
   document.querySelector("#register").addEventListener("click", () => {
     window.location.hash = "#/registerPage";
   });
