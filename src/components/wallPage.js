@@ -49,3 +49,4 @@ export const wallPage = () => {
 
   return wallContainer;
 };
+
