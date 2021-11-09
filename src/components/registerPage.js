@@ -20,10 +20,10 @@ export const registerPage = () => {
   </div>
    `;
 
-   root.appendChild(registerOne);
-   document.querySelector("#btnRegister").addEventListener('click', () =>{
+  root.appendChild(registerOne);
+  document.querySelector("#btnRegister").addEventListener("click", () => {
     userRegister();
-    
    })
    return registerPage;
 }
+
