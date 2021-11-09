@@ -1,0 +1,87 @@
+body {
+  padding: 0;
+  margin: 0;
+}
+.wallContainer {
+  background: whitesmoke;
+  position: fixed;
+  height: 897px;
+}
+.wallHeader {
+  background: rgba(239, 148, 86, 0.69);
+  height: 140px;
+  width: 382px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.logoImage {
+  height: 120px;
+  width: 120px;
+  left: 100px;
+  border-radius: 0px;
+}
+.homeSection {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.post-box {
+  height: 600px;
+  width: 310px;
+  left: 37px;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.container-post {
+  background: rgba(255, 240, 217, 1);
+  border-radius: 20px;
+  border: 3px solid #b64c0b;
+  height: 150px;
+  display: flex;
+}
+.post-text {
+  width: 170px;
+  border-radius: 10px;
+}
+.senddiv {
+  width: 50px;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-post {
+  background: rgba(255, 240, 217, 1);
+  height: 200px;
+  width: 382px;
+  left: -1px;
+  margin-top: 30px;
+  border-radius: 5px;
+  display: flex;
+}
+.like {
+  height: 50px;
+  width: 300px;
+  margin-top: 160px;
+  margin-left: 15px;
+}
+.like img {
+  height: 30px;
+  width: 31px;
+  left: 50px;
+  top: 486px;
+  margin-bottom: 5px;
+}
+
+.footer {
+  position: absolute;
+  background: rgba(239, 148, 86, 0.69);
+  height: 69px;
+  width: 375px;
+  left: -1px;
+  top: 825px;
+  display: flex;
+  gap: 30px;
+}

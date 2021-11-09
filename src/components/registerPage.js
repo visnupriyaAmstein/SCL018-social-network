@@ -10,6 +10,7 @@ export const registerPage = () => {
   registerOne.className = "registerOne";
   registerOne.id = "registerOne";
   registerOne.innerHTML = `
+  <img src='images/fondo.png' class='fondo'>
     <div class="container">
     <div class="container-register">
       <h1>REGISTRATE</h1>
@@ -25,10 +26,10 @@ export const registerPage = () => {
    </div>
    `;
 
-   root.appendChild(registerOne);
-   document.querySelector("#btnRegister").addEventListener('click', () =>{
+  root.appendChild(registerOne);
+  document.querySelector("#btnRegister").addEventListener("click", () => {
     userRegister();
-   // window.location.hash = "#/introPage";
-   })
-   return registerPage;
-}
+    // window.location.hash = "#/introPage";
+  });
+  return registerPage;
+};
