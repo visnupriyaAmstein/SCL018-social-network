@@ -10,6 +10,7 @@ export const registerPage = () => {
   registerOne.className = "registerOne";
   registerOne.id = "registerOne";
   registerOne.innerHTML = `
+  <img src='images/fondo.png' class='fondo'>
     <div class="container">
     <div class="container-register">
       <h1>REGISTRATE</h1>

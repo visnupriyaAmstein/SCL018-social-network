@@ -11,7 +11,7 @@ export const routes = (hash) => {
   } else if (hash === "#/registerPage") {
     rootContainer.appendChild(registerPage());
   } else if (hash === "#/wallPage") {
-    rootContainer.appenChild(wallPage());
+    rootContainer.appendChild(wallPage());
   }
 };
 
