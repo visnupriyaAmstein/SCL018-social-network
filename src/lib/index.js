@@ -38,6 +38,7 @@ export const userRegister = () => {
         const user = userCredential.user;
         // ...
         console.log("creado");
+        window.location.hash = "#/introPage";
       })
       .catch((error) => {
         const errorCode = error.code;
@@ -59,6 +60,7 @@ export const userLogin = () => {
         const user = userCredential.user;
         // ...
         console.log("logged in");
+        window.location.hash = "#/wallPage"
       })
       .catch((error) => {
         const errorCode = error.code;
