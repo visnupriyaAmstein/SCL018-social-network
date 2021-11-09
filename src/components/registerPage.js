@@ -1,34 +1,29 @@
 import { userRegister } from "../lib/index.js";
 const root = document.getElementById("root");
 export const registerPage = () => {
-  const logo = document.createElement("img");
-  logo.className = "introLogo";
-  logo.src = "images/logo.png";
-  root.appendChild(logo);
 
   const registerOne = document.createElement("section");
   registerOne.className = "registerOne";
   registerOne.id = "registerOne";
   registerOne.innerHTML = `
-    <div class="container">
-    <div class="container-register">
-      <h1>REGISTRATE</h1>
-    </div>
-    <div class="input-container">
-      <input type="text" id="nameRegister" placeholder="Nombre">
-     <input type="email" id="mailRegister" placeholder="correo@example.com">
-      <input type="password" id="passwordRegister" placeholder="contraseña">
-    </div>
-    <div>
-      <button id="btnRegister" class="boton-register">Crear Cuenta</button>
-    </div>
-   </div>
+  <img src='images/fondo1.png' class='fondo'>
+  <div class="container-register">
+  <h1>REGISTRATE</h1>
+  </div>
+  <div class="input-container">
+  <input type="text" id="nameRegister" placeholder="Nombre">
+  <input type="email" id="mailRegister" placeholder="correo@example.com">
+  <input type="password" id="passwordRegister" placeholder="contraseña">
+  </div>
+  <div>
+  <button id="btnRegister" class="boton-register">Crear Cuenta</button>
+  </div>
    `;
 
    root.appendChild(registerOne);
    document.querySelector("#btnRegister").addEventListener('click', () =>{
     userRegister();
-   // window.location.hash = "#/introPage";
+    
    })
    return registerPage;
 }
