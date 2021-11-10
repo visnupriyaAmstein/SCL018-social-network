@@ -6,7 +6,7 @@ export const registerPage = () => {
   registerOne.className = "registerOne";
   registerOne.id = "registerOne";
   registerOne.innerHTML = `
-  <img src='images/fondo1.png' class='fondo'>
+  <div class="container">
   <div class="container-register">
   <h1>REGISTRATE</h1>
   </div>
@@ -18,12 +18,13 @@ export const registerPage = () => {
   <div>
   <button id="btnRegister" class="boton-register">Crear Cuenta</button>
   </div>
+  </div>
    `;
 
   root.appendChild(registerOne);
   document.querySelector("#btnRegister").addEventListener("click", () => {
     userRegister();
    })
-   return registerPage;
+   return registerOne;
 }
 

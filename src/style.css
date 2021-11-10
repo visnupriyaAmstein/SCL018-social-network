@@ -3,160 +3,350 @@
     padding: 0;
     margin: 0;
 }
-/*----- intro page---- */
-@media only screen and (max-width: 375px){
-.fondo {
-   z-index: -1; 
-   background-repeat: no-repeat;
-   position: fixed;
-   margin-top: -49px;
+ @media (max-width: 1920px) and (max-height: 1080px ) {
+   .introForm {
+      width: 80vw;
+      height: 80vh;
+      margin-top: 10vh;
+      background-image: url('images/computador1.png') ;
+      background-repeat: no-repeat;
+      position: fixed;
+      background-size: cover;  
+      background-position: center center;
+      z-index: -1; 
+      font-family: "Lilita One", cursive;
+      align-items: center;
+      margin-left: 10vw;
+   }
+   .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 44vh;
+      width: 25vw;
+      margin-top: 30vh;
+      margin-left: 41vw;
+      /*border: 0.5px solid #000000;*/
+   }
+   .container-iniciar{
+      color: rgba(3, 138, 154, 1);
+      font-size: 3vh;
+      margin-top: 2vh;
+   }
+   .input-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+   }
+    input{
+      height: 4vh;
+      width: 20vw;
+      font-size: 14px;
+      border-radius: 15px;
+      text-indent: 8px;
+      margin-top: 1vh;
+   }
+   ::placeholder {
+      color: rgba(18, 154, 170, 0.49);
+      font-family: "Lilita One", cursive;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align-last: initial;
+    }
+    .btn-iniciar {
+      font-size: 20px;
+      height: 5vh;
+      width: 13vw;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 18px;
+    }
+    p {
+      align-items: center;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 10px;
+      font-size: 1.5rem;
+    }
+    .btn-google {
+      margin-top: 20px;
+      margin-left: 2vw;
+      width:3vw; 
+    }
+    .containerRegister {
+      font-size: 2.5vh;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 10px;
+    }
+    .register{
+      color:#129AAA ;
+    }
+   /* --- register Page --- */
+
+   .registerOne {
+      width: 80vw;
+      height: 80vh;
+      margin-top: 10vh;
+      background-image: url('images/computador1.png') ;
+      background-repeat: no-repeat;
+      position: fixed;
+      background-size: cover;  
+      background-position: center center;
+      z-index: -1; 
+      font-family: "Lilita One", cursive;
+      align-items: center;
+      margin-left: 10vw;
+   }
+   h1 {
+      font-size: 3vh;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 10px;
+   }
+   .boton-register{
+      font-size: 20px;
+      height: 5vh;
+      width: 13vw;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 18px;
+   }
+} 
+/* --- ipad pro --- */
+@media (max-width: 1024px) and (max-height: 1366px ){
+   /* --- intro Page --- */
+   .introForm {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('images/fondo-ipad.png') ;
+      background-repeat: no-repeat;
+      position: fixed;
+      background-size: cover;  
+      background-position: center center;
+      z-index: -1; 
+      font-family: "Lilita One", cursive;
+      align-items: center; 
+      margin: auto;
+   }
+   .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      height: 50vh;
+      width: 70vw;
+      margin-top: 40vh;
+      border-radius:  15px;
+      background: rgba(255, 254, 253, 0.835);
+      border: 0.5px solid #000000;
+      margin-left: 16vw;
+   }
+   .container-iniciar{
+     color: rgba(3, 138, 154, 1);
+     font-size: 3.8rem;
+     margin-top: 10px;
+   }
+   .input-container{
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     margin-top: 15px;
+   }
+   input{
+     height: 5.5vh;
+     width: 50vw;
+     font-size: 30px;
+     border-radius: 15px;
+     margin-top: 25px;
+   }
+   ::placeholder {
+     color: rgba(18, 154, 170, 0.49);
+     font-family: "Lilita One", cursive;
+     font-size: 30px;
+     font-style: normal;
+     font-weight: 400;
+     line-height: 21px;
+     letter-spacing: 0em;
+     text-align-last: initial;
+   }
+   .btn-iniciar {
+      font-size: 3vh;
+      height: 5vh;
+      width: 35vw;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 18px;
+    }
+    p {
+      align-items: center;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 10px;
+      font-size: 2rem;
+    }
+    .btn-google {
+      margin-top: 20px;
+      margin-left: 6vw;
+      width:7vw; 
+    }
+    .containerRegister {
+      font-size: 2.5rem;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 20px;
+    }
+    .register{
+      color:#129AAA ;
+    }
+    /* --- register Page --- */
+
+    .registerOne {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('images/fondo-ipad.png') ;
+      background-repeat: no-repeat;
+      position: fixed;
+      background-size: cover;  
+      background-position: center center;
+      z-index: -1; 
+      font-family: "Lilita One", cursive;
+      align-items: center; 
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 20px;
+    }
+    .boton-register{
+      font-size: 3vh;
+      height: 5vh;
+      width: 35vw;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 18px;
+    }
    
 }
-.introHeader {
-    flex-direction: column;
-    position: fixed;
-    justify-content: center;    
-}
-/* .introLogo {
-   top: 30px; 
-   width: 200px;
-   height: 200px;
-   align-items: center;
-   left: 10px;
-} */
-.introForm {
-   position: absolute;
-   height: 385px;
-   width: 310px;
-   left: 30px;
-   top: 263px;
-   border-radius: 15px;
-   background: rgba(255, 254, 253, 0.835);
-   border: 0.5px solid #000000;
-   display: flex;
-   flex-direction: inherit;
-   flex-flow: column;
-   align-items: center;
-   justify-content: center;
-   box-sizing: border-box;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+@media (max-width: 375px ) and (max-height: 812px ){ 
+    /*----- intro page---- */
+    .introForm {
+       width: 100vw;
+       height: 100vh;
+       background-image: url('images/fondo1.png') ;
+       background-repeat: no-repeat;
+       position: fixed;
+       background-size: cover;  
+       background-position: center center;
+       z-index: -1; 
+       font-family: "Lilita One", cursive;
+       align-items: center; 
+    }
+    .container {
+       display: flex;
+       flex-direction: column;
+       align-items: center;
+       height: 40vh;
+       width: 80vw;
+       margin-top: 250px;
+       border-radius:  15px;
+       background: rgba(255, 254, 253, 0.835);
+       border: 0.5px solid #000000;
+       margin-left: 34px;
+    }
+    .container-iniciar{
+      color: rgba(3, 138, 154, 1);
+      font-size: 1.8rem;
+      margin-top: 9px;
+    }
+    .input-container{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: 10px;
+    }
+    input{
+      height: 5vh;
+      width: 70vw;
+      font-size: 14px;
+      border-radius: 15px;
+      text-indent: 8px;
+      margin-top: 7px;
+    }
+    ::placeholder {
+      color: rgba(18, 154, 170, 0.49);
+      font-family: "Lilita One", cursive;
+      font-size: 18px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 21px;
+      letter-spacing: 0em;
+      text-align-last: initial;
+    }
+    .btn-iniciar {
+      font-size: 20px;
+      height: 5vh;
+      width: 45vw;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 18px;
+    }
+    p {
+      align-items: center;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 10px;
+      font-size: 1rem;
+    }
+    .btn-google {
+      margin-top: 10px;
+      margin-left: 8vw;
+      width:8vw; 
+    }
+    .containerRegister {
+      font-size: 100%;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 10px;
+    }
+    .register{
+      color:#129AAA ;
+    }
+    /* --- register Page --- */
+
+    .registerOne {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('images/fondo1.png') ;
+      background-repeat: no-repeat;
+      position: fixed;
+      background-size: cover;  
+      background-position: center center;
+      z-index: -1; 
+      font-family: "Lilita One", cursive;
+      align-items: center;
+    }
+    h1 {
+      color: rgba(3, 138, 154, 1);
+      font-size: 1.6rem;
+      margin-top: 9px;
+    }
+    .boton-register{
+      font-size: 20px;
+      height: 40px;
+      width: 150px;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 25px;
+    }
 }
 
-.container-iniciar{
-   align-items: center;
-   color: rgba(3, 138, 154, 1);
-   font-family: "Lilita One", cursive;
-   position: absolute;
-   top: 27px;
-   left: 95px;
-   font-size: 24px;
-}
-
-.input-container{
-   display: flex;
-   flex-direction: column;
-   gap: 2vh;
-   align-items: center;
-   width: 260px;
-   position: absolute;
-   left: 30px;
-   top: 70px;
-   border-radius: 23px;
-}
-input{
-   height: 30px;
-   width: 200px;
-   font-size: 14px;
-   border-radius: 15px;
-   line-height: 3em;
-   padding: 1px 2px;
-   text-indent: 8px;
-}
-
- ::placeholder {
-   color: rgba(18, 154, 170, 0.49);
-   font-family: "Lilita One", cursive;
-   font-size: 18px;
-   font-style: normal;
-   font-weight: 400;
-   line-height: 21px;
-   letter-spacing: 0em;
-   text-align-last: initial;
- }
-.btn-iniciar {
-  position: absolute;
-  font-size: 17px;
-  height: 45px;
-  width: 164px;
-  left: 80px;
-  background: #F19258;
-  border-radius: 15px;
-  top: 170px;
-  font-family: "Lilita One", cursive;
-  color: white;
-}
-.container-google {
-  font-family: Lilita One;
-  font-size: 15px;
-  color: #129AAA;
-  align-items: center;
-  text-align: center;
-  
-}
-.btn-google{
-  position: absolute;
-  left: 120px;
-  top: 230px;
-}
-.containerRegister{
-   font-family: Lilita One;
-   font-style: normal;
-   font-size: 18px;
-   color: #129AAA;
-   text-align: center;
-   top: 300px;
-   margin-top: 250px;
- }
- .register{
-   color:#129AAA ;
- }
-/* ---- Register Page ------ */
-.registerOne {
-   position: absolute;
-   height: 385px;
-   width: 310px;
-   left: 30px;
-   top: 263px;
-   border-radius: 15px;
-   background: rgba(255, 254, 253, 0.835);
-   border: 0.5px solid #000000;
-   display: flex;
-   flex-direction: inherit;
-   flex-flow: column;
-   align-items: center;
-   justify-content: center;
-   box-sizing: border-box;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.container-register{
-   font-size: 18px;
-   text-align: center;
-   color: rgba(3, 138, 154, 1);
-   font-family: "Lilita One", cursive;
-   position: absolute;
-   top: 27px;
-}
-.boton-register {
-  position: absolute;
-  font-size: 17px;
-  height: 45px;
-  width: 164px;
-  left: 80px;
-  background: #F19258;
-  border-radius: 15px;
-  top: 250px;
-  font-family: "Lilita One", cursive;
-  color: white;
-}
-}
