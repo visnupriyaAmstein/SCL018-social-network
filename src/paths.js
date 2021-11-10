@@ -1,6 +1,8 @@
 import { introPage } from "./components/introPage.js";
 import { registerPage } from "./components/registerPage.js";
 import { wallPage } from "./components/wallPage.js";
+import { onAuth } from "../lib/index.js"
+
 export const routes = (hash) => {
   const rootContainer = document.getElementById("root");
   rootContainer.innerHTML = "";
@@ -14,15 +16,3 @@ export const routes = (hash) => {
     rootContainer.appendChild(wallPage());
   }
 };
-
-/*export  const routes = (hash) => {
-    const root = document.getElementById('root');
-    switch (hash) {
-      case '':
-      case '#':
-      case '#/introPage':
-      root.innerHTML = introPage();
-      break;
-      /*case '#/modal':
-      root.innerHTML = modal();
-      break;*/

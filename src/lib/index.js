@@ -6,7 +6,9 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithRedirect,
-  getRedirectResult,
+  getRedirectResult, signOut,
+  onAuthStateChanged
+
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -24,6 +26,7 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
+// const user = auth.currentUser;
 console.log(app);
 
 export const userRegister = () => {
@@ -93,3 +96,26 @@ export const loginWithGoogle = () => {
       console.log(errorMessage);
     });
 };
+export const logOut = () =>{
+  document.querySelector("#logOut").addEventListener("click", () =>{
+signOut(auth).then(() => {
+  console.log(signOut()) // Sign-out successful.
+  window.location.hash = "#/introPage"
+}).catch((error) => {
+  // An error happened.
+});
+})
+}
+export const onAuth = () =>{
+onAuthStateChanged(auth, (user) => {
+  if (user) {
+    // User is signed in, see docs for a list of available properties
+    // https://firebase.google.com/docs/reference/js/firebase.User
+    const uid = user.uid;
+    console.log(uid)
+  } else {
+    // User is signed out
+    window.location.hash = "#/introPage"
+  }
+});
+}

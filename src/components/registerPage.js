@@ -24,6 +24,6 @@ export const registerPage = () => {
   document.querySelector("#btnRegister").addEventListener("click", () => {
     userRegister();
    })
-   return registerPage;
+   return registerOne;
 }
 
