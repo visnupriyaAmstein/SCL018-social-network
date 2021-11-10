@@ -17,7 +17,6 @@ export const introPage = () => {
   const section = document.createElement("section");
   section.className = "introForm";
   const intro = `
-  <img src='images/fondo1.png' class='fondo'>
   <div class="container">
   <div class="container-iniciar"
     <h1>Inicia Sesión</h1>
