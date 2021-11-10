@@ -1,7 +1,6 @@
 import { userRegister } from "../lib/index.js";
 const root = document.getElementById("root");
 export const registerPage = () => {
-
   const registerOne = document.createElement("section");
   registerOne.className = "registerOne";
   registerOne.id = "registerOne";
@@ -27,4 +26,3 @@ export const registerPage = () => {
    })
    return registerOne;
 }
-
