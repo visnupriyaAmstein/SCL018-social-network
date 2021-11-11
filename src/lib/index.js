@@ -6,6 +6,9 @@ import {
   signInWithEmailAndPassword,
   GoogleAuthProvider,
   signInWithRedirect,
+  getRedirectResult,
+  signOut,
+  onAuthStateChanged,
   getRedirectResult, signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
@@ -61,7 +64,6 @@ export const userLogin = (email1,password1) => {
         const errorMessage = error.message;
         console.log(errorCode + errorMessage);
       });
-  
 };
 export const loginWithGoogle = () => {
   signInWithRedirect(auth, provider);
@@ -87,6 +89,7 @@ export const loginWithGoogle = () => {
       console.log(errorMessage);
     });
 };
+
 // export const logOut = () =>{
 //   document.querySelector("#logOut").addEventListener("click", () =>{
 // signOut(auth).then(() => {

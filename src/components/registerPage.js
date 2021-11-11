@@ -1,4 +1,5 @@
 import { userRegister } from "../lib/index.js";
+
 export const registerPage = () => {
   const registerOne = document.createElement("section");
   registerOne.className = "registerOne";
@@ -18,6 +19,7 @@ export const registerPage = () => {
   </div>
   </div>
    `;
+
   registerOne.querySelector("#btnRegister").addEventListener("click", () => {
     //const name = document.getElementById("nameRegister").value;
     const email = document.getElementById("mailRegister").value;
