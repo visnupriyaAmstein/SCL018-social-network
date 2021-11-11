@@ -1,13 +1,11 @@
 import { userLogin } from "../lib/index.js";
 import { loginWithGoogle } from "../lib/index.js";
 
-const root = document.getElementById("root");
 export const introPage = () => {
   // Contenedor principal.
   const introContainer = document.createElement("main");
   introContainer.className = "introContainer";
   introContainer.id = "introContainer";
-  root.appendChild(introContainer);
   // Encabezado
   const header = document.createElement("header");
   header.className = "introHeader";
@@ -41,13 +39,15 @@ export const introPage = () => {
   section.innerHTML = intro;
   introContainer.appendChild(section);
 
-  document.querySelector("#btnLogin").addEventListener("click", () => {
-    userLogin();
+  introContainer.querySelector("#btnLogin").addEventListener("click", () => {
+    const email1 = document.getElementById("mailLogin").value;
+    const password1 = document.getElementById("passwordLogin").value;
+    userLogin(email1, password1);
   });
-  document.querySelector("#register").addEventListener("click", () => {
+  introContainer.querySelector("#register").addEventListener("click", () => {
     window.location.hash = "#/registerPage";
   });
-  document.querySelector("#btnGoogle").addEventListener("click", () => {
+  introContainer.querySelector("#btnGoogle").addEventListener("click", () => {
     loginWithGoogle();
   });
   return introContainer;

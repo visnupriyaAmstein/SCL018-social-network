@@ -1,10 +1,9 @@
 //import introPage from "./IntroPage";
-const root = document.getElementById("root");
+
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
   wallContainer.className = "wallContainer";
   wallContainer.id = "wallContainer";
-  root.appendChild(wallContainer);
 
   const header = document.createElement("header");
   header.className = "wallHeader";
