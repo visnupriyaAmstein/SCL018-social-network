@@ -1,4 +1,5 @@
 //import introPage from "./IntroPage";
+import { addData } from "../lib/index.js";
 
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
@@ -30,7 +31,9 @@ export const wallPage = () => {
   <div class="post-box">
   <form id="postBox" class="container-post">
   <textarea rows="4" name="comment" required id="postText" class="post-text" type="textarea"  placeholder="¿Qué hace tu mascota?"></textarea>
-  
+  <div class="boton-imprimir">
+  <button id="button">PUBLICAR</button>
+  </div>
   </form>
   <div class="home-post" id="homePost"> 
     <div class="like">
@@ -46,6 +49,10 @@ export const wallPage = () => {
   </div>`;
   home.innerHTML = post;
   wallContainer.appendChild(home);
+  wallContainer.querySelector("#button").addEventListener("click",() =>{
+    const postInput = document.getElementById("postText").value;
+    addData(postInput);
+  })
 
   return wallContainer;
 };
