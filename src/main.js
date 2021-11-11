@@ -3,6 +3,7 @@ import { onAuth } from "../lib/index.js"
 
 onAuth();
 window.addEventListener("load", () => {
+  onAuth();
   routes(window.location.hash);  
 })
 window.addEventListener("hashchange", () => {
