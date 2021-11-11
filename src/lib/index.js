@@ -120,6 +120,7 @@ export const addData = async (postInput) => {
   try {
     const docRef = await addDoc(collection(db, "posts"), {
       posts: postInput,
+
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
