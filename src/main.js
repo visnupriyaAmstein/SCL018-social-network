@@ -1,7 +1,7 @@
 import { routes } from "./paths.js";
-import { onAuth } from "../lib/index.js"
+//import { onAuth } from "../lib/index.js"
 
-onAuth();
+//onAuth();
 window.addEventListener("load", () => {
   routes(window.location.hash);  
 })
