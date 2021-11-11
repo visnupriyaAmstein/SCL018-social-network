@@ -3,9 +3,9 @@ import { routes } from "./paths.js";
 
 //onAuth();
 window.addEventListener("load", () => {
-  onAuth();
-  routes(window.location.hash);  
-})
+  //onAuth();
+  routes(window.location.hash);
+});
 window.addEventListener("hashchange", () => {
   routes(window.location.hash);
 });
