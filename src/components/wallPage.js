@@ -1,5 +1,5 @@
 //import introPage from "./IntroPage";
-import { addData } from "../lib/index.js";
+import { addData } from "../lib/index.js"
 
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
@@ -49,10 +49,11 @@ export const wallPage = () => {
   </div>`;
   home.innerHTML = post;
   wallContainer.appendChild(home);
-  wallContainer.querySelector("#button").addEventListener("click", () => {
+  wallContainer.querySelector("#button").addEventListener("click", ()=>{
     const postInput = document.getElementById("postText").value;
     addData(postInput);
-  });
+    
+  })
 
   return wallContainer;
 };

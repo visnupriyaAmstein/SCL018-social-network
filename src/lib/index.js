@@ -119,18 +119,20 @@ export const loginWithGoogle = () => {
 export const addData = async (postInput) => {
   try {
     const docRef = await addDoc(collection(db, "posts"), {
-      posts: postInput,
+      posts: postInput
 
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
-};
+}
 export const readData = async () => {
+  
   const querySnapshot = await getDocs(collection(db, "posts"));
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data().posts}`);
-  });
-};
+querySnapshot.forEach((doc) => {
+  console.log(`${doc.id} => ${doc.data().posts}`);
+});
+}
+
 readData();
