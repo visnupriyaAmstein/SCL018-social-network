@@ -7,6 +7,10 @@ export const postsModal = () => {
   headerModal.className = "headerModal";
   containerPosts.appendChild(headerModal);
 
+  const headerModal = document.createElement("header");
+  headerModal.className = 'headerModal';
+  containerPosts.appendChild(headerModal)
+
   const imgPost = document.createElement("img");
   imgPost.className = "imgPost";
   imgPost.src = "images/header32.png";

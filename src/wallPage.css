@@ -156,10 +156,10 @@ body {
     flex-direction: column;
   }
   .wallHeader {
-    background-image: url(./Images/header-compu.png);
+    background-image: url(./Images/header32.png);
     background-size: cover;
     height: 100px;
-    width: 1300px;
+    width: 100vw;
     display: flex;
     justify-content: space-between;
   }

@@ -11,11 +11,11 @@ export const wallPage = () => {
   header.className = "wallHeader";
   wallContainer.appendChild(header);
 
-  // const logo = document.createElement("img");
-  // logo.className = "logoImage";
-  // logo.src = "Images/logowp.png";
-  // logo.alt = "logo";
-  // header.appendChild(logo);
+  const logo = document.createElement("img");
+  logo.className = "logoImage";
+  logo.src = "Images/logo.png";
+  logo.alt = "logo";
+  header.appendChild(logo);
 
   const iconsDiv = document.createElement("div");
   iconsDiv.className = "icons-div";
@@ -78,3 +78,4 @@ export const wallPage = () => {
 
   return wallContainer;
 };
+

@@ -90,52 +90,51 @@
     color: #129aaa;
   }
   /* --- register Page --- */
-
-  .registerOne {
-    width: 80vw;
-    height: 80vh;
-    margin-top: 10vh;
-    background-image: url("images/computador1.png");
-    background-repeat: no-repeat;
-    position: fixed;
-    background-size: cover;
-    background-position: center center;
-    z-index: -1;
-    font-family: "Lilita One", cursive;
-    align-items: center;
-    margin-left: 10vw;
-  }
-  h1 {
-    font-size: 3vh;
-    color: rgba(3, 138, 154, 1);
-    margin-top: 10px;
-  }
-  .boton-register {
-    font-size: 20px;
-    height: 5vh;
-    width: 13vw;
-    background: #f19258;
-    border-radius: 15px;
-    font-family: "Lilita One", cursive;
-    color: white;
-    margin-top: 18px;
-  }
-  /* --- posts --- */
-  .headerModal {
-    display: inline;
-  }
-  .imgPost {
-    width: 100vw;
-    z-index: -1;
-    position: fixed;
-  }
-  .logomodal {
-    z-index: 1;
-    margin-top: -6px;
-    width: 8vw;
-    margin-left: 5vw;
-  }
-  .btnclose {
+   .registerOne {
+      width: 80vw;
+      height: 80vh;
+      margin-top: 10vh;
+      background-image: url('images/computador1.png') ;
+      background-repeat: no-repeat;
+      position: fixed;
+      background-size: cover;  
+      background-position: center center;
+      z-index: -1; 
+      font-family: "Lilita One", cursive;
+      align-items: center;
+      margin-left: 10vw;
+   }
+   h1 {
+      font-size: 3vh;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 10px;
+   }
+   .boton-register{
+      font-size: 20px;
+      height: 5vh;
+      width: 13vw;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 18px;
+   }
+   /* --- posts --- */
+   .headerModal {
+     display: inline;
+   }
+   .imgPost {
+     width: 100vw;
+     z-index: -1;
+     position: fixed;
+   }
+   .logomodal {
+     z-index: 1;
+     margin-top: -6px;
+     width: 8vw;
+     margin-left: 5vw;
+   }
+   .btnclose {
     background-image: url(images/closeIcon.png);
     width: 4vw;
     height: 4vh;
@@ -145,49 +144,49 @@
     margin-top: 8vh;
     margin-left: 74vw;
   }
-  .postText {
+   .postText {
     height: 50vh;
     width: 40vw;
     margin-top: 8vh;
     margin-left: 30vw;
-    background-color: #fff0d9;
-    border: solid 4px #884f0b;
+    background-color: #FFF0D9;
+    border:solid 4px #884F0B;
     font-size: 2rem;
-  }
-  .toPost {
-    display: flex;
-    flex-direction: row;
-    background-color: #fff0d9;
-    border: solid 4px #884f0b;
-    width: 40vw;
-    height: 8vh;
-    margin-left: 30vw;
-    margin-top: -1vh;
-  }
-  .btnToPost {
-    background-color: #f19258;
-    border: solid 1px #884f0b;
-    border-radius: 15px;
-    width: 20vw;
-    height: 6vh;
-    font-family: "Lilita One", cursive;
-    color: rgba(255, 254, 253, 0.835);
-    font-size: 1rem;
-    margin-top: 10px;
-    margin-left: 7vw;
-  }
-  .btnimg {
-    background-image: url(images/camara1.png);
-    width: 6.4vw;
-    height: 6.2vh;
-    margin-left: 5vw;
-    margin-top: 1vh;
-    border: solid 3px #884f0b;
-    border-radius: 10px;
-    background-repeat: no-repeat;
-    background-position: center center;
-  }
-}
+   }
+   .toPost {
+     display: flex;
+     flex-direction: row;
+     background-color: #FFF0D9;
+     border:solid 4px #884F0B;
+     width: 40vw;
+     height: 8vh;
+     margin-left: 30vw;
+     margin-top: -1vh;
+   }
+   .btnToPost {
+     background-color: #F19258;
+     border:solid 1px #884F0B;
+     border-radius: 15px;
+     width: 20vw;
+     height: 6vh;
+     font-family: "Lilita One", cursive;
+     color:rgba(255, 254, 253, 0.835);
+     font-size: 1rem;
+     margin-top: 10px;
+     margin-left: 7vw;
+   }
+   .btnimg {
+     background-image: url(images/camara1.png);
+     width : 6.4vw;
+     height: 6.2vh;
+     margin-left: 5vw;
+     margin-top: 1vh;
+     border:solid 3px #884F0B;
+     border-radius: 10px;
+     background-repeat: no-repeat;
+     background-position: center center;
+   }
+} 
 /* --- ipad pro --- */
 @media (max-width: 1024px) and (max-height: 1366px) {
   /* --- intro Page --- */
@@ -274,37 +273,36 @@
     color: #129aaa;
   }
   /* --- register Page --- */
-
-  .registerOne {
-    width: 100vw;
-    height: 100vh;
-    background-image: url("images/fondo-ipad.png");
-    background-repeat: no-repeat;
-    position: fixed;
-    background-size: cover;
-    background-position: center center;
-    z-index: -1;
-    font-family: "Lilita One", cursive;
-    align-items: center;
-    margin: auto;
-  }
-  h1 {
-    font-size: 2.5rem;
-    color: rgba(3, 138, 154, 1);
-    margin-top: 20px;
-  }
-  .boton-register {
-    font-size: 3vh;
-    height: 5vh;
-    width: 35vw;
-    background: #f19258;
-    border-radius: 15px;
-    font-family: "Lilita One", cursive;
-    color: white;
-    margin-top: 18px;
-  }
-  /* --- posts --- */
-  .imgPost {
+    .registerOne {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('images/fondo-ipad.png') ;
+      background-repeat: no-repeat;
+      position: fixed;
+      background-size: cover;  
+      background-position: center center;
+      z-index: -1; 
+      font-family: "Lilita One", cursive;
+      align-items: center; 
+      margin: auto;
+    }
+    h1 {
+      font-size: 2.5rem;
+      color: rgba(3, 138, 154, 1);
+      margin-top: 20px;
+    }
+    .boton-register{
+      font-size: 3vh;
+      height: 5vh;
+      width: 35vw;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 18px;
+    }
+   /* --- posts --- */
+   .imgPost {
     width: 100vw;
     z-index: -1;
     position: fixed;
@@ -325,13 +323,13 @@
     margin-left: 90vw;
   }
   .postText {
-    height: 50vh;
-    width: 50vw;
-    margin-top: 8vh;
-    margin-left: 25vw;
-    background-color: #fff0d9;
-    border: solid 4px #884f0b;
-    font-size: 2rem;
+   height: 50vh;
+   width: 50vw;
+   margin-top: 8vh;
+   margin-left: 25vw;
+   background-color: #FFF0D9;
+   border:solid 4px #884F0B;
+   font-size: 2rem;
   }
   .toPost {
     display: flex;
@@ -453,48 +451,47 @@
     color: #129aaa;
   }
   /* --- register Page --- */
-
-  .registerOne {
-    width: 100vw;
-    height: 100vh;
-    background-image: url("images/fondo1.png");
-    background-repeat: no-repeat;
-    position: fixed;
-    background-size: cover;
-    background-position: center center;
-    z-index: -1;
-    font-family: "Lilita One", cursive;
-    align-items: center;
-  }
-  h1 {
-    color: rgba(3, 138, 154, 1);
-    font-size: 1.6rem;
-    margin-top: 9px;
-  }
-  .boton-register {
-    font-size: 20px;
-    height: 40px;
-    width: 150px;
-    background: #f19258;
-    border-radius: 15px;
-    font-family: "Lilita One", cursive;
-    color: white;
-    margin-top: 25px;
-  }
-  /* --- posts --- */
-  .imgPost {
-    width: 100vw;
-    height: 5vh;
-    z-index: -1;
-    position: fixed;
-  }
-  .logomodal {
-    z-index: 1;
-    height: 5vh;
-    width: 10vw;
-    margin-left: 5vw;
-    margin-top: 5px;
-  }
+    .registerOne {
+      width: 100vw;
+      height: 100vh;
+      background-image: url('images/fondo1.png') ;
+      background-repeat: no-repeat;
+      position: fixed;
+      background-size: cover;  
+      background-position: center center;
+      z-index: -1; 
+      font-family: "Lilita One", cursive;
+      align-items: center;
+    }
+    h1 {
+      color: rgba(3, 138, 154, 1);
+      font-size: 1.6rem;
+      margin-top: 9px;
+    }
+    .boton-register{
+      font-size: 20px;
+      height: 40px;
+      width: 150px;
+      background: #F19258;
+      border-radius: 15px;
+      font-family: "Lilita One", cursive;
+      color: white;
+      margin-top: 25px;
+    }
+    /* --- posts --- */
+    .imgPost {
+      width: 100vw;
+      height: 5vh;
+      z-index: -1;
+      position: fixed;
+    }
+    .logomodal {
+      z-index: 1;
+      height: 5vh;
+      width: 10vw;
+      margin-left: 5vw;
+      margin-top: 5px;
+    }
   .btnclose {
     background-image: url(images/closeIcon.png);
     width: 7vw;
@@ -506,11 +503,11 @@
     margin-left: 90vw;
   }
   .postText {
-    height: 50vh;
-    width: 80vw;
-    margin-top: 8vh;
-    margin-left: 10vw;
-    font-size: 1rem;
+   height: 50vh;
+   width: 80vw;
+   margin-top: 8vh;
+   margin-left: 10vw;
+   font-size: 1rem;
   }
   .toPost {
     width: 80vw;
@@ -521,7 +518,7 @@
     font-size: 1.5rem;
   }
   .btnimg {
-    width: 19vw;
+    width : 19vw;
     height: 6.5vh;
   }
 }
