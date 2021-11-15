@@ -23,11 +23,10 @@ export const postsModal = () => {
   </div>
   `;
   containerPosts.appendChild(sectionPost);
-  containerPosts.querySelector("#btnToPost").addEventListener("click", ()=>{
-       const postInput = document.getElementById("postTextt").value;
-       addData(postInput);
-      
-  })
+  containerPosts.querySelector("#btnToPost").addEventListener("click", () => {
+    const postInput = document.getElementById("postTextt").value;
+    addData(postInput);
+  });
 
   return containerPosts;
-}
+};
