@@ -26,6 +26,26 @@ body {
     width: 130px;
     left: 100px;
   }
+  .icons-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .publish-image {
+    display: none;
+    width: 40px;
+    height: 40px;
+  }
+  .home-image {
+    display: none;
+    width: 40px;
+    height: 40px;
+  }
+  .logOut-image {
+    display: none;
+    width: 40px;
+    height: 40px;
+  }
 
   .homeSection {
     display: flex;
@@ -115,6 +135,11 @@ body {
     margin-top: 5px;
     margin-left: 20px;
   }
+  .create-post-icon {
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+  }
   .log-out {
     height: 75px;
     width: 75px;
@@ -136,13 +161,36 @@ body {
     height: 100px;
     width: 1300px;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-between;
   }
   .logoImage {
     height: 100px;
     width: 100px;
     margin-left: 90px;
     border-radius: 10px;
+  }
+  .icons-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 40px;
+    align-items: center;
+    margin-right: 50px;
+  }
+  .publish-image {
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
+  .home-image {
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
+  .logOut-image {
+    display: block;
+    width: 60px;
+    height: 60px;
   }
 
   .homeSection {
@@ -212,5 +260,25 @@ body {
     margin-top: 10px;
     display: flex;
     justify-content: space-around;
+  }
+  .create-post-icon {
+    display: none;
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+  }
+  .refresh-home {
+    display: none;
+    width: 70px;
+    height: 75px;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+
+  .log-out {
+    display: none;
+    height: 75px;
+    width: 75px;
+    margin-right: 20px;
   }
 }
