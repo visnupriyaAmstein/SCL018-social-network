@@ -1,5 +1,5 @@
-//import introPage from "./IntroPage";
-//import { addData } from "../lib/index.js";
+import { logOut } from "../lib/index.js";
+
 
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
@@ -10,11 +10,11 @@ export const wallPage = () => {
   header.className = "wallHeader";
   wallContainer.appendChild(header);
 
-  const logo = document.createElement("img");
-  logo.className = "logoImage";
-  logo.src = "Images/logowp.png";
-  logo.alt = "logo";
-  header.appendChild(logo);
+  // const logo = document.createElement("img");
+  // logo.className = "logoImage";
+  // logo.src = "Images/logo.png";
+  // logo.alt = "logo";
+  // header.appendChild(logo);
 
   const iconsDiv = document.createElement("div");
   iconsDiv.className = "icons-div";
@@ -22,17 +22,20 @@ export const wallPage = () => {
 
   const publishImage = document.createElement("img");
   publishImage.className = "publish-image";
-  publishImage.src = "Images/crearpostheader.png";
+  publishImage.src = "Images/botonPostBlanco.png";
+  publishImage.id = "createPostIcon1";
   iconsDiv.appendChild(publishImage);
 
   const homeImage = document.createElement("img");
   homeImage.className = "home-image";
   homeImage.src = "Images/homeImage.png";
+  homeImage.id = "refreshHome1";
   iconsDiv.appendChild(homeImage);
 
   const logOutImage = document.createElement("img");
   logOutImage.className = "logOut-image";
   logOutImage.src = "Images/exitImage.png";
+  logOutImage.id = "logOut1";
   iconsDiv.appendChild(logOutImage);
 
   const home = document.createElement("section");
@@ -48,17 +51,25 @@ export const wallPage = () => {
   </div>
     <footer class="footer">
     <img class="refresh-home"id="refreshHome" alt="" src="./Images/home.png" />
-    <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/iconcrearpost.png"/>
+    <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/botonPost.png"/>
     <img class="log-out  "id="logOut" alt="exit" src="./Images/exit.png" />
-  
     </footer>
   </div>`;
   home.innerHTML = post;
   wallContainer.appendChild(home);
-  // wallContainer.querySelector("#button").addEventListener("click", () => {
-  //   const postInput = document.getElementById("postText").value;
-  //   addData(postInput);
-  // });
+  wallContainer.querySelector("#logOut").addEventListener("click", ()=>{
+    logOut();
+  })
+  wallContainer.querySelector("#createPostIcon").addEventListener("click", ()=>{
+    window.location.hash = "#/post"
+  })
+  wallContainer.querySelector("#logOut1").addEventListener("click", ()=>{
+    logOut();
+  })
+  wallContainer.querySelector("#createPostIcon1").addEventListener("click", ()=>{
+    window.location.hash = "#/post"
+  })
+
 
   return wallContainer;
 };

@@ -175,12 +175,20 @@ body {
     justify-content: space-around;
     gap: 40px;
     align-items: center;
-    margin-right: 50px;
+    margin-left: 1000px;
   }
   .publish-image {
     display: block;
+    position: fixed;
+    bottom: 30px;
+    background: rgb(180, 104, 17);
     width: 60px;
     height: 60px;
+    border-radius: 16px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.726);
+  }
+  .publish-image:hover{
+    background-color: rgb(180, 139, 27);
   }
   .home-image {
     display: block;
@@ -282,4 +290,3 @@ body {
     margin-right: 20px;
   }
 }
-
