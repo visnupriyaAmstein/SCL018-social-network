@@ -10,17 +10,12 @@ import {
   signOut,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import {getFirestore,collection,addDoc,getDocs } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyDSBFRKHma2773nayUDsvZAbsPsx2JAfNA",
   authDomain: "petsbook-scl018.firebaseapp.com",
   projectId: "petsbook-scl018",
@@ -37,21 +32,22 @@ const db = getFirestore();
 // console.log(user);
 console.log(app);
 
+
 export const userRegister = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-      console.log("creado");
-      window.location.hash = "#/introPage";
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-      console.log(errorCode + errorMessage);
-    });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+        console.log("creado");
+        window.location.hash = "#/introPage";
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        console.log(errorCode + errorMessage);
+      });
 };
 export const onAuth = () => {
   onAuthStateChanged(auth, (user) => {

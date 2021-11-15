@@ -1,16 +1,16 @@
-import { addData } from "../lib/index.js";
+import { addData } from "../lib/index.js"
 export const postsModal = () => {
   const containerPosts = document.createElement("main");
-  containerPosts.className = "containerPost";
+  containerPosts.className = 'containerPost';
 
   const imgPost = document.createElement("img");
-  imgPost.className = "imgPost";
-  imgPost.src = "images/header-compu.png";
+  imgPost.className = 'imgPost';
+  imgPost.src = 'images/header-compu.png'
   containerPosts.appendChild(imgPost);
 
   const sectionPost = document.createElement("section");
-  sectionPost.className = "sectionPost";
-  sectionPost.innerHTML = `
+  sectionPost.className = 'sectionPost';
+  sectionPost.innerHTML =`
   <div class="contPost">
   
   <form id="contPost" class="contPost">
