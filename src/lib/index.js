@@ -10,12 +10,7 @@ import {
   signOut,
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
-import {
-  getFirestore,
-  collection,
-  addDoc,
-  getDocs,
-} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import {getFirestore,collection,addDoc,getDocs } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -34,23 +29,25 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
 // const user = auth.currentUser;
-//console.log(app);
+// console.log(user);
+console.log(app);
+
 
 export const userRegister = (email, password) => {
-  createUserWithEmailAndPassword(auth, email, password)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-      console.log("creado");
-      window.location.hash = "#/introPage";
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      // ..
-      console.log(errorCode + errorMessage);
-    });
+    createUserWithEmailAndPassword(auth, email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+        console.log("creado");
+        window.location.hash = "#/introPage";
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        // ..
+        console.log(errorCode + errorMessage);
+      });
 };
 export const onAuth = () =>{
   onAuthStateChanged(auth, (user) => {
@@ -67,20 +64,20 @@ export const onAuth = () =>{
     }
   });
   }
-export const userLogin = (email1, password1) => {
-  signInWithEmailAndPassword(auth, email1, password1)
-    .then((userCredential) => {
-      // Signed in
-      const user = userCredential.user;
-      // ...
-      console.log("logged in");
-      window.location.hash = "#/wallPage";
-    })
-    .catch((error) => {
-      const errorCode = error.code;
-      const errorMessage = error.message;
-      console.log(errorCode + errorMessage);
-    });
+export const userLogin = (email1,password1) => {
+    signInWithEmailAndPassword(auth, email1, password1)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        // ...
+        console.log("logged in");
+        window.location.hash = "#/wallPage"
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.log(errorCode + errorMessage);
+      });
 };
 export const loginWithGoogle = () => {
   signInWithRedirect(auth, provider);
@@ -106,6 +103,7 @@ export const loginWithGoogle = () => {
       console.log(errorMessage);
     });
 };
+
 export const logOut = () =>{
   const auth = getAuth();
   signOut(auth).then(() => {
@@ -114,6 +112,7 @@ export const logOut = () =>{
     console.log(error);// An error happened.
   });
   }
+
 export const addData = async (postInput) => {
   console.log(postInput);
   try {

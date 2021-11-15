@@ -27,7 +27,7 @@ export const postsModal = () => {
        const postInput = document.getElementById("postTextt").value;
        addData(postInput);
       
-  });
+  })
 
   return containerPosts;
 }
