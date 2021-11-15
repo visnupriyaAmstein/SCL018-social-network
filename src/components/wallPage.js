@@ -1,6 +1,5 @@
 import { logOut } from "../lib/index.js";
 
-
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
   wallContainer.className = "wallContainer";
@@ -10,11 +9,11 @@ export const wallPage = () => {
   header.className = "wallHeader";
   wallContainer.appendChild(header);
 
-  // const logo = document.createElement("img");
-  // logo.className = "logoImage";
-  // logo.src = "Images/logo.png";
-  // logo.alt = "logo";
-  // header.appendChild(logo);
+  const logo = document.createElement("img");
+  logo.className = "logoImage";
+  logo.src = "Images/logo.png";
+  logo.alt = "logo";
+  header.appendChild(logo);
 
   const iconsDiv = document.createElement("div");
   iconsDiv.className = "icons-div";
@@ -43,7 +42,7 @@ export const wallPage = () => {
   const post = `
   <div class="post-box">
   
-  <div class="home-post" id="homePost"> 
+  <div class="home-post" id="homePost" data-post=> 
     <div class="like">
     <img  id="" alt="" src="./Images/like.png" />
     </div>
@@ -57,19 +56,22 @@ export const wallPage = () => {
   </div>`;
   home.innerHTML = post;
   wallContainer.appendChild(home);
-  wallContainer.querySelector("#logOut").addEventListener("click", ()=>{
+  wallContainer.querySelector("#logOut").addEventListener("click", () => {
     logOut();
-  })
-  wallContainer.querySelector("#createPostIcon").addEventListener("click", ()=>{
-    window.location.hash = "#/post"
-  })
-  wallContainer.querySelector("#logOut1").addEventListener("click", ()=>{
+  });
+  wallContainer
+    .querySelector("#createPostIcon")
+    .addEventListener("click", () => {
+      window.location.hash = "#/post";
+    });
+  wallContainer.querySelector("#logOut1").addEventListener("click", () => {
     logOut();
-  })
-  wallContainer.querySelector("#createPostIcon1").addEventListener("click", ()=>{
-    window.location.hash = "#/post"
-  })
-
+  });
+  wallContainer
+    .querySelector("#createPostIcon1")
+    .addEventListener("click", () => {
+      window.location.hash = "#/post";
+    });
 
   return wallContainer;
 };

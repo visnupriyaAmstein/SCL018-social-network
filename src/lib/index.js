@@ -1,4 +1,3 @@
-// Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 import {
   getAuth,
@@ -10,7 +9,16 @@ import {
   signOut,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
-import {getFirestore,collection,addDoc,getDocs } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import {
+  getFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  query,
+  orderBy,
+  onSnapshot,
+} from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -28,28 +36,27 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
+
 // const user = auth.currentUser;
 // console.log(user);
 console.log(app);
 
-
 export const userRegister = (email, password) => {
-    createUserWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-        // Signed in
-        const user = userCredential.user;
-        // ...
-        console.log("creado");
-        window.location.hash = "#/introPage";
-      })
-      .catch((error) => {
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        // ..
-        console.log(errorCode + errorMessage);
-      });
+  createUserWithEmailAndPassword(auth, email, password)
+    .then((userCredential) => {
+      // Signed in
+      const user = userCredential.user;
+      // ...
+      console.log("creado");
+      window.location.hash = "#/introPage";
+    })
+    .catch((error) => {
+      const errorCode = error.code;
+      const errorMessage = error.message;
+      // ..
+      console.log(errorCode + errorMessage);
+    });
 };
-
 export const userLogin = (email1, password1) => {
   signInWithEmailAndPassword(auth, email1, password1)
     .then((userCredential) => {
@@ -129,10 +136,21 @@ export const addData = async (postInput) => {
   }
 };
 // addData("posts");
-export const readData = async () => {
-  const querySnapshot = await getDocs(collection(db, "posts"));
-  querySnapshot.forEach((doc) => {
-    console.log(`${doc.id} => ${doc.data().posts}`);
+// export const readData = async () => {
+//   const querySnapshot = await getDocs(collection(db, "posts"));
+//   querySnapshot.forEach((doc) => {
+//     console.log(`${doc.id} => ${doc.data().posts}`);
+//   });
+// };
+// readData();
+export const showPost = (nameCollection, callback) => {
+  const q = query(collection(db, nameCollection), orderBy("posts", "desc"));
+  onSnapshot(q, (querySnapshot) => {
+    const postContent = [];
+    querySnapshot.forEach((doc) => {
+      postContent.push(doc.data().posts);
+    });
+    callback(postContent);
+    console.log("posts", postContent.join(", "));
   });
 };
-readData();

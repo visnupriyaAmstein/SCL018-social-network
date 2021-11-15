@@ -66,4 +66,10 @@
 //       callback(posts);
 //     });
 //   };
-  
+// export const readData = async () => {
+//     const querySnapshot = await getDocs(collection(db, "posts"));
+//     querySnapshot.forEach((doc) => {
+//       console.log(`${doc.id} => ${doc.data().posts}`);
+//     });
+//   };
+//   readData();
