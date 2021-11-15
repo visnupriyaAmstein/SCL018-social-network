@@ -18,5 +18,4 @@ export const routes = (hash) => {
   } else if (hash === "#/post") {
     rootContainer.appendChild(postsModal());
   }
-
 };
