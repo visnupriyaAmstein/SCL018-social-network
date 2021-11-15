@@ -57,23 +57,6 @@ export const userRegister = (email, password) => {
       console.log(errorCode + errorMessage);
     });
 };
-export const onAuth = () => {
-  onAuthStateChanged(auth, (user) => {
-    if (user) {
-      // User is signed in, see docs for a list of available properties
-      // https://firebase.google.com/docs/reference/js/firebase.User
-      const uid = user.uid;
-      window.location.hash = "#/wallPage";
-      console.log(uid);
-    } else {
-      // User is signed out
-      // logOut();
-      console.log("no existe user");
-      window.location.hash = "#/introPage";
-    }
-  });
-};
-
 export const userLogin = (email1, password1) => {
   signInWithEmailAndPassword(auth, email1, password1)
     .then((userCredential) => {
@@ -86,6 +69,7 @@ export const userLogin = (email1, password1) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
+      alert("Debes escribir tu correo y constraseña")
       console.log(errorCode + errorMessage);
     });
 };
@@ -118,13 +102,28 @@ export const logOut = () => {
   const auth = getAuth();
   signOut(auth)
     .then(() => {
-      window.location.hash = "#/"; // Sign-out successful.
+      window.location.hash = "#/introPage"; // Sign-out successful.
     })
     .catch((error) => {
       console.log(error); // An error happened.
     });
 };
-
+export const onAuth = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      window.location.hash= "#/wallPage";
+      console.log(uid);
+    } else {
+      // User is signed out
+      // logOut();
+      console.log("no existe user");
+      window.location.hash= "#/introPage";
+    }
+  });
+};
 export const addData = async (postInput) => {
   console.log(postInput);
   try {

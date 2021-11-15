@@ -1,5 +1,3 @@
-//import introPage from "./IntroPage";
-//import { addData } from "../lib/index.js";
 import { logOut } from "../lib/index.js";
 
 export const wallPage = () => {
@@ -23,7 +21,7 @@ export const wallPage = () => {
 
   const publishImage = document.createElement("img");
   publishImage.className = "publish-image";
-  publishImage.src = "Images/crearpostheader.png";
+  publishImage.src = "Images/botonPostBlanco.png";
   publishImage.id = "createPostIcon1";
   iconsDiv.appendChild(publishImage);
 
@@ -52,9 +50,8 @@ export const wallPage = () => {
   </div>
     <footer class="footer">
     <img class="refresh-home"id="refreshHome" alt="" src="./Images/home.png" />
-    <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/iconcrearpost.png"/>
+    <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/botonPost.png"/>
     <img class="log-out  "id="logOut" alt="exit" src="./Images/exit.png" />
-  
     </footer>
   </div>`;
   home.innerHTML = post;
@@ -78,4 +75,3 @@ export const wallPage = () => {
 
   return wallContainer;
 };
-
