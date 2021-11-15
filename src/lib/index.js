@@ -7,8 +7,8 @@ import {
   GoogleAuthProvider,
   signInWithRedirect,
   getRedirectResult,
-  // signOut,
-  // onAuthStateChanged
+  signOut,
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 import {
   getFirestore,
@@ -34,6 +34,7 @@ const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
 // const user = auth.currentUser;
+// console.log(user);
 console.log(app);
 
 export const userRegister = (email, password) => {
@@ -52,7 +53,21 @@ export const userRegister = (email, password) => {
       console.log(errorCode + errorMessage);
     });
 };
-
+export const onAuth = () => {
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      // User is signed in, see docs for a list of available properties
+      // https://firebase.google.com/docs/reference/js/firebase.User
+      const uid = user.uid;
+      console.log(uid);
+    } else {
+      // User is signed out
+      // logOut();
+      console.log("no existe user");
+      logOut();
+    }
+  });
+};
 export const userLogin = (email1, password1) => {
   signInWithEmailAndPassword(auth, email1, password1)
     .then((userCredential) => {
@@ -93,46 +108,33 @@ export const loginWithGoogle = () => {
     });
 };
 
-// export const logOut = () =>{
-//   document.querySelector("#logOut").addEventListener("click", () =>{
-// signOut(auth).then(() => {
-//   console.log(signOut()) // Sign-out successful.
-//   window.location.hash = "#/introPage"
-// }).catch((error) => {
-//   // An error happened.
-// });
-// })
-// }
-// export const onAuth = () =>{
-// onAuthStateChanged(auth, (user) => {
-//   if (user) {
-//     // User is signed in, see docs for a list of available properties
-//     // https://firebase.google.com/docs/reference/js/firebase.User
-//     const uid = user.uid;
-//     console.log(uid)
-//   } else {
-//     // User is signed out
-//     window.location.hash = "#/introPage"
-//   }
-// });
-// }
+export const logOut = () => {
+  const auth = getAuth();
+  signOut(auth)
+    .then(() => {
+      window.location.hash = "#/"; // Sign-out successful.
+    })
+    .catch((error) => {
+      console.log(error); // An error happened.
+    });
+};
+
 export const addData = async (postInput) => {
+  console.log(postInput);
   try {
     const docRef = await addDoc(collection(db, "posts"), {
-      posts: postInput
-
+      posts: postInput,
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
-}
+};
+// addData("posts");
 export const readData = async () => {
-  
   const querySnapshot = await getDocs(collection(db, "posts"));
-querySnapshot.forEach((doc) => {
-  console.log(`${doc.id} => ${doc.data().posts}`);
-});
-}
-
+  querySnapshot.forEach((doc) => {
+    console.log(`${doc.id} => ${doc.data().posts}`);
+  });
+};
 readData();
