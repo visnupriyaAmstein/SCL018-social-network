@@ -15,7 +15,7 @@ import {getFirestore,collection,addDoc,getDocs } from "https://www.gstatic.com/f
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 // Your web app's Firebase configuration
-const firebaseConfig = {
+export const firebaseConfig = {
   apiKey: "AIzaSyDSBFRKHma2773nayUDsvZAbsPsx2JAfNA",
   authDomain: "petsbook-scl018.firebaseapp.com",
   projectId: "petsbook-scl018",
