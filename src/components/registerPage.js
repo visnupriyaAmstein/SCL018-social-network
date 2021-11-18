@@ -24,7 +24,7 @@ export const registerPage = () => {
     const name = document.getElementById("nameRegister").value;
     const email = document.getElementById("mailRegister").value;
     const password = document.getElementById("passwordRegister").value;
-    userRegister(email , password, name);
-   })
-   return registerOne;
-}
+    userRegister(email, password, name);
+  });
+  return registerOne;
+};
