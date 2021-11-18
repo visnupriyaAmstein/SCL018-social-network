@@ -7,6 +7,7 @@ import {
   signInWithRedirect,
   getRedirectResult,
   signOut,
+  updateProfile,
   onAuthStateChanged,
   updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
@@ -37,6 +38,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
+const user = auth.currentUser;
 
 // const user = auth.currentUser;
 // console.log(user);
@@ -45,15 +47,13 @@ console.log(app);
 export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      console.log(userCredential);
       // Signed in
       const user = userCredential.user;
       console.log(userCredential.user);
       updateProfile(auth.currentUser, {
         displayName: name,
       });
-      // addUser(user.uid,name);
-      // console.log(addUser);
-      // ...
       console.log("creado");
       window.location.hash = "#/introPage";
     })
@@ -144,25 +144,6 @@ export const addData = async (postInput) => {
   }
 };
 
-// const addUser = async (displayName) => {
-//  try {
-//    const docRef = await addDoc(collection(db, 'user'),{
-//      name : displayName,
-//    });
-//    console.log("Document written with ID: ", docRef.id);
-//  } catch (e) {
-//   console.error("Error adding document: ", e);
-// }
-// };
-//}
-// addData("posts");
-// export const readData = async () => {
-//   const querySnapshot = await getDocs(collection(db, "posts"));
-//   querySnapshot.forEach((doc) => {
-//     console.log(`${doc.id} => ${doc.data().posts}`);
-//   });
-// };
-// readData();
 export const readData = (posts, callback) => {
   const q = query(collection(db, posts), orderBy("datepost", "desc"));
   onSnapshot(q, (querySnapshot) => {
