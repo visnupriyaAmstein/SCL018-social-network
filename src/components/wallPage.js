@@ -1,5 +1,5 @@
 import { logOut } from "../lib/index.js";
-
+import { showPost  } from "../lib/postTemplate.js";
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
   wallContainer.className = "wallContainer";
@@ -50,28 +50,27 @@ export const wallPage = () => {
   </div>
     <footer class="footer">
     <img class="refresh-home"id="refreshHome" alt="" src="./Images/home.png" />
-    <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/botonPost.png"/>
+    <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/botonPostBlanco.png"/>
     <img class="log-out  "id="logOut" alt="exit" src="./Images/exit.png" />
     </footer>
   </div>`;
   home.innerHTML = post;
   wallContainer.appendChild(home);
+  showPost();
   wallContainer.querySelector("#logOut").addEventListener("click", () => {
     logOut();
+    });
+  wallContainer.querySelector("#createPostIcon").addEventListener("click", () => {
+      window.location.hash = "#/post";
   });
-  wallContainer
-    .querySelector("#createPostIcon")
-    .addEventListener("click", () => {
+  wallContainer.querySelector("#createPostIcon1").addEventListener("click", () => {
       window.location.hash = "#/post";
     });
-  wallContainer.querySelector("#logOut1").addEventListener("click", () => {
-    logOut();
-  });
-  wallContainer
-    .querySelector("#createPostIcon1")
-    .addEventListener("click", () => {
-      window.location.hash = "#/post";
+    wallContainer.querySelector("#logOut").addEventListener("click", () => {
+      logOut();
     });
-
+    wallContainer.querySelector("#logOut1").addEventListener("click", () => {
+      logOut();
+    });
   return wallContainer;
 };

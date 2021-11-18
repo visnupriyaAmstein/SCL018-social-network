@@ -6,5 +6,6 @@ window.addEventListener("load", () => {
   routes(window.location.hash);
 })
 window.addEventListener("hashchange", () => {
+  onAuth();
   routes(window.location.hash);
 });

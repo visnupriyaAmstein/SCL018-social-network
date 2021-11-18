@@ -7,6 +7,7 @@ import {
   signInWithRedirect,
   getRedirectResult,
   signOut,
+  updateProfile,
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 import {
@@ -36,17 +37,23 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
+const user = auth.currentUser;
 
 // const user = auth.currentUser;
 // console.log(user);
 console.log(app);
 
-export const userRegister = (email, password) => {
+export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      console.log(userCredential);
       // Signed in
-      const user = userCredential.user;
-      // ...
+
+      const user = userCredential.user
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+
       console.log("creado");
       window.location.hash = "#/introPage";
     })
@@ -114,21 +121,21 @@ export const onAuth = () => {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       const uid = user.uid;
-      window.location.hash= "#/wallPage";
       console.log(uid);
     } else {
-      // User is signed out
-      // logOut();
-      console.log("no existe user");
-      window.location.hash= "#/introPage";
+      if(window.location.hash !== "#/registerPage"){
+        logOut();
+      }
     }
   });
 };
 export const addData = async (postInput) => {
   console.log(postInput);
   try {
-    const docRef = await addDoc(collection(db, "posts"), {
+    const docRef = await addDoc(collection(db, "posts"), { 
+      name: auth.currentUser.displayName,
       posts: postInput,
+      datepost: Date(Date.now()), 
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
@@ -143,14 +150,14 @@ export const addData = async (postInput) => {
 //   });
 // };
 // readData();
-export const showPost = (nameCollection, callback) => {
-  const q = query(collection(db, nameCollection), orderBy("posts", "desc"));
+export const readData = (posts, callback) => {
+  const q = query(collection(db, posts), orderBy("posts", "desc"));
   onSnapshot(q, (querySnapshot) => {
     const postContent = [];
     querySnapshot.forEach((doc) => {
       postContent.push(doc.data().posts);
     });
     callback(postContent);
-    console.log("posts", postContent.join(", "));
+    console.log("posts","datepost","name", postContent.join(", "));
   });
 };
