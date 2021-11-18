@@ -1,5 +1,5 @@
 import { readData } from './index.js'
-
+//import { deleteDocument } from './index.js'
 export const showPost = () => {
     readData('posts', callPost);
 };
@@ -9,7 +9,7 @@ function callPost(posts) {
     //const feed = document.createElement('div');
     const feed = document.getElementById('homePost');
     feed.innerHTML= '';
-    //const divPosts  = document.createElement('div');
+    // const divPosts  = document.createElement('div');
 
     const myFunction = (e) => {
         const viewPost =`
@@ -20,13 +20,17 @@ function callPost(posts) {
         </div>
         <div class="like">
         <img  id="" alt="" src="./Images/like.png" />
+        <button id='btnDelete' class='btnDelete'>borrar</button>
         </div>`;
         feed.innerHTML += viewPost;
        // feed.appendChild(postUser);
     };
     posts.forEach(myFunction);
-    //feed.appendChild(divPosts);
     console.log(feed);
+
+    // feed.querySelector("#btnDelete").addEventListener("click", () => {
+    //     deleteDocument();
+    //   });
     return feed ;
 
 }

@@ -41,4 +41,4 @@ export const postsModal = () => {
   });
 
   return containerPosts;
-}
+};

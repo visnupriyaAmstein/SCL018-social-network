@@ -7,8 +7,8 @@ import {
   signInWithRedirect,
   getRedirectResult,
   signOut,
-  onAuthStateChanged,
   updateProfile,
+  onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 import {
   getFirestore,
@@ -18,7 +18,10 @@ import {
   query,
   orderBy,
   onSnapshot,
+  doc,
+  deleteDoc,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
+import { async } from "regenerator-runtime";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -37,23 +40,22 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
+const user = auth.currentUser;
 
 // const user = auth.currentUser;
 // console.log(user);
 console.log(app);
 
-export const userRegister = (email, password,name) => {
+export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
+      console.log(userCredential);
       // Signed in
       const user = userCredential.user;
       console.log(userCredential.user);
       updateProfile(auth.currentUser, {
         displayName: name,
       });
-      // addUser(user.uid,name);
-      // console.log(addUser);
-      // ...
       console.log("creado");
       window.location.hash = "#/introPage";
     })
@@ -76,7 +78,7 @@ export const userLogin = (email1, password1) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert("Debes escribir tu correo y constraseña")
+      alert("Debes escribir tu correo y constraseña");
       console.log(errorCode + errorMessage);
     });
 };
@@ -123,7 +125,7 @@ export const onAuth = () => {
       const uid = user.uid;
       console.log(uid);
     } else {
-      if(window.location.hash !== "#/registerPage"){
+      if (window.location.hash !== "#/registerPage") {
         logOut();
       }
     }
@@ -134,7 +136,7 @@ export const addData = async (postInput) => {
   console.log(postInput);
   try {
     const docRef = await addDoc(collection(db, "posts"), {
-      name :auth.currentUser.displayName,
+      name: auth.currentUser.displayName,
       posts: postInput,
       datepost: Date(Date.now()),
     });
@@ -144,26 +146,7 @@ export const addData = async (postInput) => {
   }
 };
 
-// const addUser = async (displayName) => {
-//  try {
-//    const docRef = await addDoc(collection(db, 'user'),{
-//      name : displayName,
-//    });
-//    console.log("Document written with ID: ", docRef.id);
-//  } catch (e) {
-//   console.error("Error adding document: ", e);
-// }
-// };
-//}
-// addData("posts");
-// export const readData = async () => {
-//   const querySnapshot = await getDocs(collection(db, "posts"));
-//   querySnapshot.forEach((doc) => {
-//     console.log(`${doc.id} => ${doc.data().posts}`);
-//   });
-// };
-// readData();
- export const readData = (posts, callback) => {
+export const readData = (posts, callback) => {
   const q = query(collection(db, posts), orderBy("datepost", "desc"));
   onSnapshot(q, (querySnapshot) => {
     const postContent = [];
@@ -171,6 +154,12 @@ export const addData = async (postInput) => {
       postContent.push(doc.data());
     });
     callback(postContent);
-    console.log("posts","datepost",'name',postContent.join(", "));
+    console.log("posts", "datepost", "name", postContent.join(", "));
   });
 };
+
+//  export async function deleteDocument () {
+//   await deleteDoc(doc(db, "posts", "DC"));
+
+//  }
+ 
