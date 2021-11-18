@@ -8,6 +8,7 @@ import {
   getRedirectResult,
   signOut,
   onAuthStateChanged,
+  updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 import {
   getFirestore,
@@ -41,11 +42,17 @@ const db = getFirestore();
 // console.log(user);
 console.log(app);
 
-export const userRegister = (email, password) => {
+export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
       // Signed in
       const user = userCredential.user;
+      console.log(userCredential.user);
+      updateProfile(auth.currentUser, {
+        displayName: name,
+      });
+      // addUser(user.uid,name);
+      // console.log(addUser);
       // ...
       console.log("creado");
       window.location.hash = "#/introPage";
@@ -69,7 +76,7 @@ export const userLogin = (email1, password1) => {
     .catch((error) => {
       const errorCode = error.code;
       const errorMessage = error.message;
-      alert("Debes escribir tu correo y constraseña")
+      alert("Debes escribir tu correo y constraseña");
       console.log(errorCode + errorMessage);
     });
 };
@@ -114,27 +121,40 @@ export const onAuth = () => {
       // User is signed in, see docs for a list of available properties
       // https://firebase.google.com/docs/reference/js/firebase.User
       const uid = user.uid;
-      window.location.hash= "#/wallPage";
       console.log(uid);
     } else {
-      // User is signed out
-      // logOut();
-      console.log("no existe user");
-      window.location.hash= "#/introPage";
+      if (window.location.hash !== "#/registerPage") {
+        logOut();
+      }
     }
   });
 };
+
 export const addData = async (postInput) => {
   console.log(postInput);
   try {
     const docRef = await addDoc(collection(db, "posts"), {
+      name: auth.currentUser.displayName,
       posts: postInput,
+      datepost: Date(Date.now()),
     });
     console.log("Document written with ID: ", docRef.id);
   } catch (e) {
     console.error("Error adding document: ", e);
   }
 };
+
+// const addUser = async (displayName) => {
+//  try {
+//    const docRef = await addDoc(collection(db, 'user'),{
+//      name : displayName,
+//    });
+//    console.log("Document written with ID: ", docRef.id);
+//  } catch (e) {
+//   console.error("Error adding document: ", e);
+// }
+// };
+//}
 // addData("posts");
 // export const readData = async () => {
 //   const querySnapshot = await getDocs(collection(db, "posts"));
@@ -143,14 +163,14 @@ export const addData = async (postInput) => {
 //   });
 // };
 // readData();
-export const showPost = (nameCollection, callback) => {
-  const q = query(collection(db, nameCollection), orderBy("posts", "desc"));
+export const readData = (posts, callback) => {
+  const q = query(collection(db, posts), orderBy("datepost", "desc"));
   onSnapshot(q, (querySnapshot) => {
     const postContent = [];
     querySnapshot.forEach((doc) => {
-      postContent.push(doc.data().posts);
+      postContent.push(doc.data());
     });
     callback(postContent);
-    console.log("posts", postContent.join(", "));
+    console.log("posts", "datepost", "name", postContent.join(", "));
   });
 };

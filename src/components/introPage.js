@@ -42,13 +42,14 @@ export const introPage = () => {
   introContainer.querySelector("#btnLogin").addEventListener("click", () => {
     const email1 = document.getElementById("mailLogin").value;
     const password1 = document.getElementById("passwordLogin").value;
-    userLogin(email1 , password1);
+    userLogin(email1, password1);
   });
   introContainer.querySelector("#register").addEventListener("click", () => {
     window.location.hash = "#/registerPage";
   });
   introContainer.querySelector("#btnGoogle").addEventListener("click", () => {
     loginWithGoogle();
+    window.location.hash = "#/wallPage";
   });
   return introContainer;
 };
