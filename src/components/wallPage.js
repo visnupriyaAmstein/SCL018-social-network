@@ -1,4 +1,5 @@
 import { logOut } from "../lib/index.js";
+import { showPost } from "../lib/postTemplate.js"
 
 export const wallPage = () => {
   const wallContainer = document.createElement("main");
@@ -27,7 +28,7 @@ export const wallPage = () => {
 
   const homeImage = document.createElement("img");
   homeImage.className = "home-image";
-  homeImage.src = "Images/homeImage.png";
+  homeImage.src = "Images/home.png";
   homeImage.id = "refreshHome1";
   iconsDiv.appendChild(homeImage);
 
@@ -40,38 +41,37 @@ export const wallPage = () => {
   const home = document.createElement("section");
   home.className = "homeSection";
   const post = `
-  <div class="post-box">
-  
-  <div class="home-post" id="homePost" data-post=> 
-    <div class="like">
-    <img  id="" alt="" src="./Images/like.png" />
-    </div>
-  </div>
-  </div>
+  <div class="home-post" id="homePost"></div>
     <footer class="footer">
     <img class="refresh-home"id="refreshHome" alt="" src="./Images/home.png" />
     <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/botonPost.png"/>
     <img class="log-out  "id="logOut" alt="exit" src="./Images/exit.png" />
-    </footer>
-  </div>`;
+    </footer>`;
   home.innerHTML = post;
   wallContainer.appendChild(home);
+  showPost();
   wallContainer.querySelector("#logOut").addEventListener("click", () => {
     logOut();
   });
-  wallContainer
-    .querySelector("#createPostIcon")
-    .addEventListener("click", () => {
+  wallContainer.querySelector("#createPostIcon").addEventListener("click", () => {
       window.location.hash = "#/post";
     });
   wallContainer.querySelector("#logOut1").addEventListener("click", () => {
     logOut();
   });
-  wallContainer
-    .querySelector("#createPostIcon1")
-    .addEventListener("click", () => {
+  wallContainer.querySelector("#createPostIcon1").addEventListener("click", () => {
       window.location.hash = "#/post";
     });
 
   return wallContainer;
 };
+
+{/* <div class="post-box">
+  
+  <div class="home-post" id="homePost"></div>
+    <footer class="footer">
+    <img class="refresh-home"id="refreshHome" alt="" src="./Images/home.png" />
+    <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/botonPost.png"/>
+    <img class="log-out  "id="logOut" alt="exit" src="./Images/exit.png" />
+    </footer>
+  </div>`; */}

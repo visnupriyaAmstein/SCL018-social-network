@@ -49,6 +49,7 @@ export const introPage = () => {
   });
   introContainer.querySelector("#btnGoogle").addEventListener("click", () => {
     loginWithGoogle();
+    window.location.hash = "#/wallPage";
   });
   return introContainer;
 };
