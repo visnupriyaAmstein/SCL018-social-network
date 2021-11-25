@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 import {
   getAuth,
@@ -9,16 +10,20 @@ import {
   signOut,
   updateProfile,
   onAuthStateChanged,
-  updateProfile,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-auth.js";
 import {
   getFirestore,
   collection,
   addDoc,
-  getDocs,
   query,
   orderBy,
   onSnapshot,
+  doc,
+  deleteDoc,
+  Timestamp,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -38,7 +43,7 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
-const user = auth.currentUser;
+export const user = auth.currentUser;
 
 // const user = auth.currentUser;
 // console.log(user);
@@ -131,27 +136,84 @@ export const onAuth = () => {
 };
 
 export const addData = async (postInput) => {
-  console.log(postInput);
-  try {
-    const docRef = await addDoc(collection(db, "posts"), {
-      name: auth.currentUser.displayName,
-      posts: postInput,
-      datepost: Date(Date.now()),
-    });
-    console.log("Document written with ID: ", docRef.id);
-  } catch (e) {
-    console.error("Error adding document: ", e);
-  }
+  const auth = getAuth();
+  const user = auth.currentUser;
+  const docRef = await addDoc(collection(db, "posts"), {
+    name: auth.currentUser.displayName,
+    posts: postInput,
+    datePosted: Timestamp.fromDate(new Date()),
+    userid: user.uid,
+    //likes: likes.user.uid,
+  });
+  return docRef;
 };
 
 export const readData = (posts, callback) => {
   const q = query(collection(db, posts), orderBy("datepost", "desc"));
   onSnapshot(q, (querySnapshot) => {
     const postContent = [];
-    querySnapshot.forEach((doc) => {
-      postContent.push(doc.data());
+    querySnapshot.forEach((document) => {
+      const element = {};
+      element["id"] = document.id;
+      element["data"] = document.data();
+      postContent.push({ element });
     });
+
     callback(postContent);
-    console.log("posts", "datepost", "name", postContent.join(", "));
   });
 };
+
+export const manageLike = async (uid) => {
+  console.log("voy a dar o quitar like al post", uid);
+  const auth = getAuth();
+  // const user = auth.currentUser;
+  const likesRef = doc(db, "posts", "EAPWRurrm2KTrsHpywQb");
+  console.log(likesRef);
+
+  // import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
+
+  // const washingtonRef = doc(db, "cities", "");
+
+  // // Atomically add a new region to the "regions" array field.
+  await updateDoc(likesRef, {
+    likes: arrayUnion(uid),
+  });
+
+  // // Atomically remove a region from the "regions" array field.
+  // await updateDoc(washingtonRef, {
+  //     regions: arrayRemove("east_coast")
+  // });
+
+  // if (likesRef.includes(uid)) {
+  //   // Atomically add a new region to the "regions" array field.
+  //   await updateDoc(likesRef, {
+  //     likes: arrayUnion(uid),
+  //   });
+  // } else {
+  //   // Atomically remove a region from the "regions" array field.
+  //   await updateDoc(likesRef, {
+  //     likes: arrayRemove(uid),
+  //   });
+  //   return manageLike();
+  //   //https://firebase.google.com/docs/firestore/manage-data/add-data?authuser=0#update_elements_in_an_array
+  // }
+};
+
+export const deletePost = async (id) => {
+  await deleteDoc(doc(db, "posts", id));
+};
+// const user = auth.currentUser;
+
+// const postData = doc.data();
+// //el documento de snapshot tiene una propiedad id
+// //https://firebase.google.cn/docs/reference/js/firestore_.documentsnapshot.md?hl=es-419#documentsnapshotid
+// postData.id = doc.id;
+
+// const likesCounter = postData.likes ? postData.likes.length : 0;
+
+// postData.likesCounter = likesCounter;
+
+// const iLike = postData.likes ? postData.likes.includes(user.uid) : false;
+// postData.iLikeIt = iLike;
+
+// postContent.push(postData);
