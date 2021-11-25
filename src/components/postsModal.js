@@ -1,4 +1,5 @@
 import { addData } from "../lib/index.js";
+
 export const postsModal = () => {
   const containerPosts = document.createElement("main");
   containerPosts.className = "containerPost";
@@ -15,7 +16,6 @@ export const postsModal = () => {
   const logo = document.createElement("img");
   logo.className = "logomodal";
   logo.src = "Images/logo.png";
-  //logo.alt = "logo";
   headerModal.appendChild(logo);
 
   const sectionPost = document.createElement("section");
