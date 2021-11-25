@@ -65,17 +65,8 @@ export const wallPage = () => {
     wallContainer.querySelector("#logOut1").addEventListener("click", () => {
       logOut();
     });
+    wallContainer.querySelector("#refreshHome").addEventListener("click", () => {
+      window.location.hash = "#/wallPage";
+    });
   return wallContainer;
 };
-
-{
-  /* <div class="post-box">
-  
-  <div class="home-post" id="homePost"></div>
-    <footer class="footer">
-    <img class="refresh-home"id="refreshHome" alt="" src="./Images/home.png" />
-    <img class="create-post-icon" id="createPostIcon" alt="Publicar" src="./Images/botonPost.png"/>
-    <img class="log-out  "id="logOut" alt="exit" src="./Images/exit.png" />
-    </footer>
-  </div>`; */
-}
