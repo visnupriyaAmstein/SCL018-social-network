@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 import {
   getAuth,
@@ -23,7 +24,6 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
-
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 export const firebaseConfig = {
@@ -39,7 +39,7 @@ const app = initializeApp(firebaseConfig);
 export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
-const user = auth.currentUser;
+export const user = auth.currentUser;
 
 export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
@@ -140,6 +140,7 @@ export const readData = (posts, callback) => {
       element['data']= document.data();
       postContent.push({element});
     });
+
     callback(postContent);
   });
 };

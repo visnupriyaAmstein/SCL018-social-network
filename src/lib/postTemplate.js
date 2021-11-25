@@ -1,7 +1,8 @@
 import { readData ,manageLike } from './index.js'
 import { deletePost } from './index.js'
+
 export const showPost = () => {
-    readData('posts', callPost);
+  readData("posts", callPost);
 };
 
 function callPost(posts) {
