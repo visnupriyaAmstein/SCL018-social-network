@@ -8,7 +8,7 @@ En la generación 18 de Laboratoria se nos presentó el reto de la realización 
 
 Comenzamos con nuestra investigación y realizamos encuestas para determinar cuál era nuestro público objetivo y lo que querían ver en nuestra Red Social.
 
-{FOTO DE ENCUESTAS}
+ * [Click para ver encuesta](https://github.com/Fritza02/SCL018-memory-match/blob/main/src/imagenes-readme/baja-fidelidad1.png?raw=true)
 
 Posterior a eso, concluimos nuestras historias de usuario
 
