@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 import {
   getAuth,
@@ -24,6 +23,7 @@ import {
   updateDoc,
   arrayUnion,
   arrayRemove,
+  getDoc,
 } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-firestore.js";
 
 export const firebaseConfig = {
@@ -40,6 +40,7 @@ export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
 export const user = auth.currentUser;
+
 
 export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
@@ -122,22 +123,26 @@ export const addData = async (postInput) => {
   console.log(postInput);
     const docRef = await addDoc(collection(db, "posts"), {
       name: auth.currentUser.displayName,
+      userId: auth.currentUser.uid,
       posts: postInput,
       datePosted: Timestamp.fromDate(new Date()),
+      likes: [],
+      likesCounter:0,
+
     });
+    console.log('userId');
     return docRef;
 } 
 
 export const readData = (posts, callback) => {
   const q = query(collection(db, posts), orderBy("datePosted", "desc"));
   onSnapshot(q, (querySnapshot) => {
-
-  
     const postContent = [];
     querySnapshot.forEach((document) => {
       const element = {};
-      element['id'] = document.id;
-      element['data']= document.data();
+      element.id = document.id;
+      element.data= document.data();
+     // element['like']=document.like;
       postContent.push({element});
     });
 
@@ -145,26 +150,24 @@ export const readData = (posts, callback) => {
   });
 };
 
-export const manageLike = async (uid) => {
-  console.log(typeof uid);
-  console.log("voy a dar o quitar like al post", uid);
-  const auth = getAuth();
-  const user = auth.currentUser;
-  const likesRef = doc(db, "likes", uid);
-  console.log(likesRef);
 
-  if (likesRef.includes(uid)) {
-    // Atomically add a new region to the "regions" array field.
+
+export const manageLike = async (id, likesUpdate) => {
+  const likesRef = doc(db, "posts", id);
+  const docSnap = await getDoc(likesRef);
+  const postData = docSnap.data();
+  const likesCount = postData.likesCounter;
+  
+   if ((postData.likes).includes(likesUpdate)) {
     await updateDoc(likesRef, {
-      likes: arrayUnion(uid),
+     likes: arrayRemove(likesUpdate),
+     likesCounter: likesCount - 1,
     });
   } else {
-    // Atomically remove a region from the "regions" array field.
-    await updateDoc(likesRef, {
-      likes: arrayRemove(uid),
-    });
-    return manageLike();
-    //https://firebase.google.com/docs/firestore/manage-data/add-data?authuser=0#update_elements_in_an_array
+   await updateDoc(likesRef, {
+     likes: arrayUnion(likesUpdate),
+     likesCounter: likesCount + 1,
+   });
   }
 };
 
@@ -174,38 +177,9 @@ export const deletePost = async (id) => {
   await deleteDoc(doc(db,'posts', id ))
 };
 
-/*export const manageLike = async (uid) => {
-  console.log("voy a dar o quitar like al post", uid);
-  const auth = getAuth();
-  // const user = auth.currentUser;
-  const likesRef = doc(db, "posts", "EAPWRurrm2KTrsHpywQb");
-  console.log(likesRef);
-
-  // import { doc, updateDoc, arrayUnion, arrayRemove } from "firebase/firestore";
-
-  // const washingtonRef = doc(db, "cities", "");
-
-  // // Atomically add a new region to the "regions" array field.
-  await updateDoc(likesRef, {
-    likes: arrayUnion(uid),
-  });*/
-
-  // // Atomically remove a region from the "regions" array field.
-  // await updateDoc(washingtonRef, {
-  //     regions: arrayRemove("east_coast")
-  // });
-  // const user = auth.currentUser;
-
-// const postData = doc.data();
-// //el documento de snapshot tiene una propiedad id
-// //https://firebase.google.cn/docs/reference/js/firestore_.documentsnapshot.md?hl=es-419#documentsnapshotid
-// postData.id = doc.id;
-
-// const likesCounter = postData.likes ? postData.likes.length : 0;
-
-// postData.likesCounter = likesCounter;
-
-// const iLike = postData.likes ? postData.likes.includes(user.uid) : false;
-// postData.iLikeIt = iLike;
-
-// postContent.push(postData);}
+export const updatePost = async (id, postTextEdit) =>{
+  const postEdit = doc(db, "posts", id);
+await updateDoc(postEdit, {
+  posts: postTextEdit,
+});
+}
