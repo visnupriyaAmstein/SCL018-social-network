@@ -170,9 +170,3 @@ export const deletePost = async (id) => {
   alert("¿Estas seguro de querer borrar tu post?");
   await deleteDoc(doc(db, "posts", id));
 };
-// export const updateData = async (id, postUpdate) => {
-//   const postRef = doc(db, 'posts', id);
-//   await updateDoc(postRef, {
-//       posts: postUpdate,
-//   });
-// }
