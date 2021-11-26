@@ -1,4 +1,4 @@
-# Creando una Red Social
+# Petsbook Red social
 
 ## 1. Resumen del proyecto
 
@@ -8,15 +8,20 @@ En la generación 18 de Laboratoria se nos presentó el reto de la realización 
 
 Comenzamos con nuestra investigación y realizamos encuestas para determinar cuál era nuestro público objetivo y lo que querían ver en nuestra Red Social.
 
- * [Click para ver encuesta](https://github.com/Fritza02/SCL018-memory-match/blob/main/src/imagenes-readme/baja-fidelidad1.png?raw=true)
+ * [Click para ver encuesta](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/encuentas.png?raw=true)
 
 Posterior a eso, concluimos nuestras historias de usuario
 
-{FOTO DE HISTORIAS DE USUARIO}
+* Historias de usuarios
+ ![foto1](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/historias-usuarios.png?raw=true)
+ ![foto2](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/definicion-terminado.png?raw=true)
 
 Desarrollamos nuestros prototipos de baja y alta fidelidad, basándonos en nuestra investigación para hacer nuestra aplicación más cercana e intuitiva para nuestros usuarios.
 
-{FOTO PROTOTIPO ALTA Y BAJA}
+* [Click para ver imagen de baja fidelidad](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/baja-fidelidad.jpeg?raw=true)
+* [Click para ver imagen de alta fidelidad para celular ](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/alta-fidelidad.png?raw=true)
+* [Click para ver imagen de alta fidelidad para computador ](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/alta-fidelidad.png?raw=true)
+
 
 ## 3. Comportamiento de la interfaz de usuario
 
@@ -27,6 +32,9 @@ Iniciar sesión con la cuenta creada.
 Ver los posts en Home.
 Crear un post.
 Eliminar el post, si así el usuario lo requiere.
+
+* visualización de Petsbook
+ ![foto3](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/visualizacion.png?raw=true)
 
 ## 4. Test de usabilidad
 
