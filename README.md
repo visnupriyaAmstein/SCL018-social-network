@@ -20,7 +20,7 @@ Desarrollamos nuestros prototipos de baja y alta fidelidad, basándonos en nuest
 
 * [Click para ver imagen de baja fidelidad](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/baja-fidelidad.jpeg?raw=true)
 * [Click para ver imagen de alta fidelidad para celular ](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/alta-fidelidad.png?raw=true)
-* [Click para ver imagen de alta fidelidad para computador ](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/alta-fidelidad.png?raw=true)
+* [Click para ver imagen de alta fidelidad para computador ](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/fidelidad-compu.png?raw=true)
 
 
 ## 3. Comportamiento de la interfaz de usuario
@@ -42,10 +42,12 @@ Luego de concluir nuestros criterios de aceptación, desarrollamos los test de u
 
 {LOOM}
 
-## 5. Creadores
+## 5. Link de Petsbook
+
+## 6. Creadores
 
 Este proyecto fue desarrollado por:
 
-Margarita Molina
-Visnuprinya Amstein
-Maria Fernanda Ramos
+* Margarita Molina
+* Visnuprinya Amstein
+* Maria Fernanda Ramos
