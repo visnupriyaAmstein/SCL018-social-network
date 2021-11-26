@@ -143,7 +143,7 @@ body {
   }
   .btnDelete {
     background-image: url(images/deletebtn.png);
-    background-color:  transparent;
+    background-color: transparent;
     background-position: center center;
     width: 2.4vw;
     height: 5.2vh;
@@ -188,13 +188,16 @@ body {
   #modalEdit{
    display: none;
   }
+  .btnEdit {
+    font-size: 2rem;
+  }
 }
 /* --- ipad pro --- */
  @media only screen and (max-width: 1024px) {
   .footer {
     position: absolute;
     background: rgba(239, 148, 86, 0.69);
-    height:10vh;
+    height: 10vh;
     width: 100vw;
     top: 90vh;
     display: flex;
@@ -242,7 +245,7 @@ body {
 /* --- iphon x --- */
  @media only screen and (max-width: 375px) { 
   .logoImage {
-  margin-left: 36vw;
+    margin-left: 36vw;
   }
   .icons-div {
     display: flex;

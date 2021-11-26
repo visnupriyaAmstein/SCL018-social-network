@@ -6,8 +6,8 @@ export const showPost = () => {
 };
 
 function callPost(posts) {
-    const feed = document.getElementById('homePost');
-    feed.innerHTML= '';
+  const feed = document.getElementById("homePost");
+  feed.innerHTML = "";
 
     const myFunction = (postData) => {
         //let iterator = Object.values(e);
@@ -53,7 +53,16 @@ function callPost(posts) {
       const userId = auth.currentUser.uid;
       manageLike(postId, userId);
     });
+  });
+  const likeBtn = feed.querySelectorAll(".btn-like");
+  likeBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      btn.classList.add("ganadora");
+      const postId = btn.value;
+      const userId = auth.currentUser.uid;
+      manageLike(postId, userId);
     });
+  });
 
           const postModalEdit = feed.querySelectorAll(".btnEdit");
       postModalEdit.forEach((btn) => {

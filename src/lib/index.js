@@ -45,13 +45,12 @@ export const user = auth.currentUser;
 export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
-
       const user = userCredential.user;
       console.log(userCredential.user);
       updateProfile(auth.currentUser, {
         displayName: name,
       });
-      alert ("Tu cuenta a sido creada");
+      alert("Tu cuenta a sido creada");
       window.location.hash = "#/introPage";
     })
     .catch((error) => {
@@ -82,7 +81,6 @@ export const loginWithGoogle = () => {
   signInWithRedirect(auth, provider);
   getRedirectResult(auth)
     .then((result) => {
-     
       const credential = GoogleAuthProvider.credentialFromResult(result);
       const token = credential.accessToken;
       const user = result.user;
@@ -100,10 +98,10 @@ export const logOut = () => {
   const auth = getAuth();
   signOut(auth)
     .then(() => {
-      window.location.hash = "#/introPage"; 
+      window.location.hash = "#/introPage";
     })
     .catch((error) => {
-      console.log(error); 
+      console.log(error);
     });
 };
 export const onAuth = () => {
@@ -142,15 +140,12 @@ export const readData = (posts, callback) => {
       const element = {};
       element.id = document.id;
       element.data= document.data();
-     // element['like']=document.like;
       postContent.push({element});
     });
 
     callback(postContent);
   });
 };
-
-
 
 export const manageLike = async (id, likesUpdate) => {
   const likesRef = doc(db, "posts", id);
@@ -171,10 +166,9 @@ export const manageLike = async (id, likesUpdate) => {
   }
 };
 
-
 export const deletePost = async (id) => {
-  alert ('¿Estas seguro de querer borrar tu post?');
-  await deleteDoc(doc(db,'posts', id ))
+  alert("¿Estas seguro de querer borrar tu post?");
+  await deleteDoc(doc(db, "posts", id));
 };
 
 export const updatePost = async (id, postTextEdit) =>{
