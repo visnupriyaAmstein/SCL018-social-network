@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.2.0/firebase-app.js";
 import {
   getAuth,
@@ -41,6 +40,7 @@ export const auth = getAuth(app);
 const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
 export const user = auth.currentUser;
+
 
 export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
@@ -119,17 +119,18 @@ export const onAuth = () => {
 
 export const addData = async (postInput) => {
   console.log(postInput);
-  const docRef = await addDoc(collection(db, "posts"), {
-    name: auth.currentUser.displayName,
-    userId: auth.currentUser.uid,
-    posts: postInput,
-    datePosted: Timestamp.fromDate(new Date()),
-    likes: [],
-    likesCounter: 0,
-  });
-  console.log("userId");
-  return docRef;
-};
+    const docRef = await addDoc(collection(db, "posts"), {
+      name: auth.currentUser.displayName,
+      userId: auth.currentUser.uid,
+      posts: postInput,
+      datePosted: Timestamp.fromDate(new Date()),
+      likes: [],
+      likesCounter:0,
+
+    });
+    console.log('userId');
+    return docRef;
+} 
 
 export const readData = (posts, callback) => {
   const q = query(collection(db, posts), orderBy("datePosted", "desc"));
@@ -138,9 +139,8 @@ export const readData = (posts, callback) => {
     querySnapshot.forEach((document) => {
       const element = {};
       element.id = document.id;
-      element.data = document.data();
-      // element['like']=document.like;
-      postContent.push({ element });
+      element.data= document.data();
+      postContent.push({element});
     });
 
     callback(postContent);
@@ -152,17 +152,17 @@ export const manageLike = async (id, likesUpdate) => {
   const docSnap = await getDoc(likesRef);
   const postData = docSnap.data();
   const likesCount = postData.likesCounter;
-
-  if (postData.likes.includes(likesUpdate)) {
+  
+   if ((postData.likes).includes(likesUpdate)) {
     await updateDoc(likesRef, {
-      likes: arrayRemove(likesUpdate),
-      likesCounter: likesCount - 1,
+     likes: arrayRemove(likesUpdate),
+     likesCounter: likesCount - 1,
     });
   } else {
-    await updateDoc(likesRef, {
-      likes: arrayUnion(likesUpdate),
-      likesCounter: likesCount + 1,
-    });
+   await updateDoc(likesRef, {
+     likes: arrayUnion(likesUpdate),
+     likesCounter: likesCount + 1,
+   });
   }
 };
 
@@ -170,3 +170,10 @@ export const deletePost = async (id) => {
   alert("¿Estas seguro de querer borrar tu post?");
   await deleteDoc(doc(db, "posts", id));
 };
+
+export const updatePost = async (id, postTextEdit) =>{
+  const postEdit = doc(db, "posts", id);
+await updateDoc(postEdit, {
+  posts: postTextEdit,
+});
+}
