@@ -54,15 +54,7 @@ function callPost(posts) {
       manageLike(postId, userId);
     });
   });
-  const likeBtn = feed.querySelectorAll(".btn-like");
-  likeBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.classList.add("ganadora");
-      const postId = btn.value;
-      const userId = auth.currentUser.uid;
-      manageLike(postId, userId);
-    });
-  });
+
 
           const postModalEdit = feed.querySelectorAll(".btnEdit");
       postModalEdit.forEach((btn) => {
