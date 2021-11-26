@@ -1,0 +1,327 @@
+@import url("https://fonts.googleapis.com/css2?family=Lilita+One&display=swap");
+
+body {
+  padding: 0;
+  margin: 0;
+}
+@media only screen and (max-width: 1920px) {
+  .wallContainer {
+    position: fixed;
+    height: 1024px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .wallHeader {
+    background-image: url(./Images/header32.png);
+    background-size: cover;
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  .logoImage {
+    height: 100px;
+    width: 100px;
+    margin-left: 90px;
+    border-radius: 10px;
+  }
+  .icons-div {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 40px;
+    align-items: center;
+    margin-left: 1000px;
+  }
+  .publish-image {
+    display: block;
+    position: fixed;
+    bottom: 30px;
+    background: rgb(180, 104, 17);
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    box-shadow: 0px 1px 10px rgba(0, 0, 0, 0.726);
+  }
+  .publish-image:hover {
+    background-color: rgb(180, 139, 27);
+  }
+  .home-image {
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
+  .logOut-image {
+    display: block;
+    width: 60px;
+    height: 60px;
+  }
+
+  .homeSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    overflow-y: scroll;
+    width: 100%;
+  }
+  .home-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: "Lilita One", cursive;
+    color: rgba(18, 154, 170, 0.49);
+    
+  }
+  .post {
+    background-color: rgba(255, 240, 217, 1);
+    width: 31vw;
+    height: 20vh;
+    font-size: 1rem;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: solid 2px #884f0b;
+  }
+  .user-name {
+    font-size: 2rem;
+    color:rgba(18, 154, 170, 0.49);
+    text-shadow: 1px 0px rgba(18, 154, 170, 0.49) ;
+  }
+  .like {
+    display :flex;
+    justify-content: center;
+    align-items:center;
+    background: rgba(239, 148, 86, 0.69);
+    width: 31vw;
+    height: 7vh;
+    border-radius: 10px;
+    border: solid 2px #884f0b;
+  }
+    .btn-like {
+    background-image: url(images/no-like.png);
+    width: 2.4vw;
+    height: 5.2vh;
+    background-color:  transparent;
+    background-position: center center;
+    border: none;
+  } 
+  .likesCounter {
+    margin-left: 200px;
+  }
+  .ganadora {
+    background-image: url(images/like.png);
+    /* background-color: red; */
+    border: transparent;
+  } 
+  .create-post-icon {
+    display: none;
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+  }
+  .refresh- {
+    display: none;
+    width: 70px;
+    height: 75px;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+
+  .log-out {
+    display: none;
+    height: 75px;
+    width: 75px;
+    margin-right: 20px;
+  }
+  .refresh-home {
+    display: none;
+  }
+  .logOut-image {
+    margin-right: 10px;
+  }
+  .btnDelete {
+    background-image: url(images/deletebtn.png);
+    background-color: transparent;
+    background-position: center center;
+    width: 2.4vw;
+    height: 5.2vh;
+    margin-left: 24vw;
+    border-radius: 10px;
+    margin-top: 4px;
+    border: none;
+  } 
+  .btnEdit {
+    height: 20px;
+    width: 50px;
+    margin-left: 50px;
+  }
+  .modalEdit {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    transition: all 500ms ease;
+    opacity: 0;
+    visibility: hidden;
+  }
+  #modalEdit:checked ~.modalEdit{
+    opacity: 1;
+    visibility: visible;
+  }
+  .contenedor-modalEditBox{
+    width: 400px;
+    height: 400px;
+    margin: auto;
+    background: #fff;
+    box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
+    transition: all 500ms ease;
+    position: relative;
+  }
+  .contenedor-modalEditBox label{
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+  }
+  #modalEdit{
+   display: none;
+  }
+  .btnEdit {
+    font-size: 2rem;
+  }
+}
+/* --- ipad pro --- */
+ @media only screen and (max-width: 1024px) {
+  .footer {
+    position: absolute;
+    background: rgba(239, 148, 86, 0.69);
+    height: 10vh;
+    width: 100vw;
+    top: 90vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .refresh-home {
+    display: block;
+  }
+  .log-out {
+    display: block;
+    height: 10vh;
+    width: 15vw;
+  }
+  .create-post-icon {
+    display: block;
+    width: 12vw;
+    height: 7vh;
+    margin-top: 18px;
+    background: rgb(180, 104, 17);
+    border-radius: 27px;
+  }
+  .post {
+    background-color: rgba(255, 240, 217, 1);
+    width: 60vw;
+    height: 20vh;
+    font-size: 2rem;
+    margin-top: 10px;
+    border-radius: 10px;
+    text-align: center;
+    border: solid 2px #884f0b;
+  }
+  .like {
+    background: rgba(239, 148, 86, 0.69);
+    height: 7vh;
+    width: 60vw;
+    border-radius: 10px;
+    margin-top: -2px;
+    border: solid 2px #884f0b;
+  }
+  .btnDelete {
+    margin-left: 46vw;
+  } 
+} 
+/* --- iphon x --- */
+ @media only screen and (max-width: 375px) { 
+  .logoImage {
+    margin-left: 36vw;
+  }
+  .icons-div {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .publish-image {
+    display: none;
+    width: 40px;
+    height: 40px;
+  }
+  .home-image {
+    display: none;
+    width: 40px;
+    height: 40px;
+  }
+  .logOut-image {
+    display: none;
+    width: 40px;
+    height: 40px;
+  }
+  .footer {
+    position: absolute;
+    background: rgba(239, 148, 86, 0.69);
+    height: 80px;
+    width: 375px;
+    left: -1px;
+    top: 732px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .refresh-home {
+    width: 70px;
+    height: 75px;
+    margin-top: 5px;
+    margin-left: 20px;
+  }
+  .create-post-icon {
+    width: 60px;
+    height: 60px;
+    margin-top: 5px;
+    border-radius: 15px;
+  }
+  .post {
+    background-color: rgba(255, 240, 217, 1);
+    width: 81vw;
+    height: 15vh;
+    font-size: 1rem;
+    border-radius: 10px;
+    text-align: center;
+    border: solid 2px #884f0b;
+    margin-top: 10px;
+  }
+  .like {
+    background: rgba(239, 148, 86, 0.69);
+    height: 6vh;
+    width: 81vw;
+    border-radius: 10px;
+    margin-top: -2px;
+    border: solid 2px #884f0b;
+  }
+  /* .like img {
+    height: 5vh;
+    margin-left: 21px;
+    border: transparent;
+    background-color:  transparent;
+  } */
+  .btnDelete {
+    background-image: url(images/deletebtn.png);
+    background-color: transparent;
+    background-position: center center;
+    width: 9.4vw;
+    height: 5.2vh;
+    margin-left: 53vw;
+    border: none;
+    margin-top: 4px;
+  }
+} 
