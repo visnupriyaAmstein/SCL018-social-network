@@ -49,5 +49,5 @@ Luego de concluir nuestros criterios de aceptación, desarrollamos los test de u
 Este proyecto fue desarrollado por:
 
 * Margarita Molina
-* Visnuprinya Amstein
+* Visnupriya Amstein
 * Maria Fernanda Ramos
