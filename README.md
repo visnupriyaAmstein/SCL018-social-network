@@ -40,7 +40,8 @@ Eliminar el post, si así el usuario lo requiere.
 
 Luego de concluir nuestros criterios de aceptación, desarrollamos los test de usabilidad, teniendo como resultado una respuesta positiva de nuestros usuarios, logrando el objetivo de hacer fácil de usar e intuitiva nuestra Red Social.
 
-{LOOM}
+![foto4](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/main/src/imagenes-Readme/test-usabilidad.png?raw=true)
+
 
 ## 5. Link de Petsbook
 
