@@ -1,16 +1,11 @@
-import { readData, manageLike } from "./index.js";
-import { auth, deletePost, updatePost } from "./index.js";
-
-export const showPost = () => {
-  readData("posts", callPost);
-};
+import { readData, manageLike, auth, deletePost, updatePost } from "./index.js";
 
 function callPost(posts) {
   const feed = document.getElementById("homePost");
   feed.innerHTML = "";
 
   const myFunction = (postData) => {
-    //let iterator = Object.values(e);
+    // let iterator = Object.values(e);
     const viewPost = `
         <div class="container-post" id="cp-${postData.element.id}">
           <div class="post" id=${postData.element.id}>
@@ -29,7 +24,7 @@ function callPost(posts) {
         </div>
         </div> 
         `;
-    let viewPost3 = ``;
+    let viewPost3 = "";
 
     if (postData.element.data.userId === auth.currentUser.uid) {
       viewPost3 = `
@@ -66,8 +61,8 @@ function callPost(posts) {
   postModalEdit.forEach((btn) => {
     btn.addEventListener("click", () => {
       const postId = btn.value;
-      const divPostId = "cp-" + postId;
-      const divPost = feed.querySelector("#" + divPostId);
+      const divPostId = `cp-${postId}`;
+      const divPost = feed.querySelector(`#${divPostId}`);
       const oldPostContent = divPost.querySelector(".posts").textContent;
 
       const postModalEditTem = `
@@ -75,10 +70,10 @@ function callPost(posts) {
         <label for="modalEdit" class="modalEdit"></label>
         <div class="modalEditBox">
           <div class="contenedor-modalEditBox">
-            <label for="modalEdit" id="closeModal" >X</label>
             <div class="contenido">
             <textarea name="textarea" rows="5" id="postTxt" class="postTextEdit" ></textarea>
               <button id="updateSave" class="updateSave">Guardar</button>
+              <button id="updateCancel" class="updateCancel">Cancelar</button>
             </div>
           </div>
         </div>
@@ -87,7 +82,7 @@ function callPost(posts) {
       feed.innerHTML = postModalEditTem;
 
       // const postFeed = divPost.querySelector(".posts");
-      let postTextEdit = feed.querySelector("#postTxt");
+      const postTextEdit = feed.querySelector("#postTxt");
       postTextEdit.value = oldPostContent;
       const updateSave = document.querySelector("#updateSave");
       updateSave.addEventListener("click", () => {
@@ -95,7 +90,14 @@ function callPost(posts) {
         // document.getElementById("modalEdit").checked = false;
         console.log(postTextEdit);
       });
+      const updateCancel = feed.querySelector("#updateCancel");
+      updateCancel.addEventListener("click", () => {
+        window.location.reload();
+      });
     });
   });
   return feed;
 }
+export const showPost = () => {
+  readData("posts", callPost);
+};

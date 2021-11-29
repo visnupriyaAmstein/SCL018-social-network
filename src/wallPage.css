@@ -204,27 +204,28 @@ body {
     opacity: 0;
     visibility: hidden;
   }
-  #modalEdit:checked ~.modalEdit{
+  #modalEdit:checked ~ .modalEdit {
     opacity: 1;
     visibility: visible;
   }
-  .contenedor-modalEditBox{
+  .contenedor-modalEditBox {
     width: 200px;
     height: 200px;
     margin: auto;
-    background: #fff;
+    background-color: #fff0d9;
+    border: solid 4px #884f0b;
     box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
     transition: all 500ms ease;
     position: relative;
   }
-  .contenedor-modalEditBox label{
+  .contenedor-modalEditBox label {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
   }
-  #modalEdit{
-   display: none;
+  #modalEdit {
+    display: none;
   }
   .postTextEdit {
     width: 200px;
@@ -232,7 +233,26 @@ body {
     margin: auto;
     border: none;
   }
-  
+  .updateSave {
+    background-color: #f19258;
+    border: solid 1px #884f0b;
+    border-radius: 15px;
+    font-family: "Lilita One", cursive;
+    color: rgba(255, 254, 253, 0.835);
+    width: 80px;
+    height: 25px;
+    cursor: pointer;
+  }
+  .updateCancel {
+    background-color: #f19258;
+    border: solid 1px #884f0b;
+    border-radius: 15px;
+    font-family: "Lilita One", cursive;
+    color: rgba(255, 254, 253, 0.835);
+    width: 80px;
+    height: 25px;
+    cursor: pointer;
+  }
 }
 /* --- ipad pro --- */
 @media only screen and (max-width: 1024px) {
@@ -342,11 +362,11 @@ body {
     opacity: 0;
     visibility: hidden;
   }
-  #modalEdit:checked ~.modalEdit{
+  #modalEdit:checked ~ .modalEdit {
     opacity: 1;
     visibility: visible;
   }
-  .contenedor-modalEditBox{
+  .contenedor-modalEditBox {
     width: 200px;
     height: 200px;
     margin: auto;
@@ -355,14 +375,14 @@ body {
     transition: all 500ms ease;
     position: relative;
   }
-  .contenedor-modalEditBox label{
+  .contenedor-modalEditBox label {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
   }
-  #modalEdit{
-   display: none;
+  #modalEdit {
+    display: none;
   }
   .postTextEdit {
     width: 200px;
@@ -512,4 +532,3 @@ body {
     border: none;
   }
 }
-
