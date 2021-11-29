@@ -66,9 +66,10 @@ function callPost(posts) {
   postModalEdit.forEach((btn) => {
     btn.addEventListener("click", () => {
       const postId = btn.value;
-    const divPostId = "cp-" + postId;
-    const divPost = feed.querySelector("#"+divPostId);
-    const oldPostContent = divPost.querySelector('.posts').textContent;
+      const divPostId = "cp-" + postId;
+      const divPost = feed.querySelector("#" + divPostId);
+      const oldPostContent = divPost.querySelector(".posts").textContent;
+
       const postModalEditTem = `
         <input type="checkbox" id="modalEdit">
         <label for="modalEdit" class="modalEdit"></label>
@@ -81,24 +82,22 @@ function callPost(posts) {
             </div>
           </div>
         </div>
-      `
+
+      `;
       feed.innerHTML = postModalEditTem;
 
-    
-    // const postFeed = divPost.querySelector(".posts");
-    let  postTextEdit = feed.querySelector("#postTxt");
+      // const postFeed = divPost.querySelector(".posts");
+      let postTextEdit = feed.querySelector("#postTxt");
       postTextEdit.value = oldPostContent;
-  
-    
-    
       const updateSave = document.querySelector("#updateSave");
       updateSave.addEventListener("click", () => {
         updatePost(postId, postTextEdit.value);
         // document.getElementById("modalEdit").checked = false;
-        console.log(postTextEdit)
+        console.log(postTextEdit);
       });
     });
   });
   return feed;
-
 }
+}
+
