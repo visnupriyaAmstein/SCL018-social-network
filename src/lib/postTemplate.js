@@ -77,15 +77,14 @@ function callPost(posts) {
             </div>
           </div>
         </div>
-      `;
+      `
 
-      const postId = btn.value;
-      const divPost = document.getElementById(postId);
-      console.log(divPost);
-      // const postFeed = divPost.querySelector(".posts");
-      const postTextEdit = document.getElementById(btn.value).firstElementChild
-        .textContent;
-      console.log(postTextEdit);
+    const postId = btn.value;
+    const divPost = document.getElementById(postId);
+    console.log(divPost);
+    // const postFeed = divPost.querySelector(".posts");
+    const postTextEdit = document.getElementById(btn.value).firstElementChild.textContent;
+    console.log(postTextEdit)
 
       feed.innerHTML = postModalEditTem;
 
@@ -97,4 +96,5 @@ function callPost(posts) {
     });
   });
   return feed;
+
 }

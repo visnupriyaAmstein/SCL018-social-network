@@ -51,11 +51,13 @@ body {
     display: block;
     width: 60px;
     height: 60px;
+    cursor: pointer;
   }
   .logOut-image {
     display: block;
     width: 60px;
     height: 60px;
+    cursor: pointer;
   }
 
   .homeSection {
@@ -151,6 +153,7 @@ body {
     height: 75px;
     margin-top: 5px;
     margin-left: 20px;
+    cursor: pointer;
   }
 
   .log-out {
@@ -158,6 +161,7 @@ body {
     height: 75px;
     width: 75px;
     margin-right: 20px;
+    cursor: pointer;
   }
   .refresh-home {
     display: none;
@@ -228,6 +232,7 @@ body {
     margin: auto;
     border: none;
   }
+  
 }
 
 /* --- ipad pro --- */
@@ -386,11 +391,13 @@ body {
     display: none;
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
   .logOut-image {
     display: none;
     width: 40px;
     height: 40px;
+    cursor: pointer;
   }
   .footer {
     position: absolute;
@@ -408,6 +415,7 @@ body {
     height: 75px;
     margin-top: 5px;
     margin-left: 20px;
+    cursor: pointer;
   }
   .create-post-icon {
     width: 60px;
