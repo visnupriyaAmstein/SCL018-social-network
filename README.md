@@ -45,6 +45,8 @@ Luego de concluir nuestros criterios de aceptación, desarrollamos los test de u
 
 ## 5. Link de Petsbook
 
+* https://visnupriyaamstein.github.io/SCL018-social-network/src/#/introPage
+
 ## 6. Creadores
 
 Este proyecto fue desarrollado por:
