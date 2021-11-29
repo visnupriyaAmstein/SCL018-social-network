@@ -12,10 +12,10 @@ function callPost(posts) {
   const myFunction = (postData) => {
     //let iterator = Object.values(e);
     const viewPost = `
-        <div class="container-post">
-        <div class="post" id=${postData.element.id}>
-        <div class='user-name'>${postData.element.data.name}</div>
-        <div class="posts" >${postData.element.data.posts}</div>
+        <div class="container-post" id="cp-${postData.element.id}">
+          <div class="post" id=${postData.element.id}>
+          <div class='user-name'>${postData.element.data.name}</div>
+          <div class="posts" >${postData.element.data.posts}</div>
         </div>
         <div class="like">
         <div class="likeBtn">
@@ -65,6 +65,10 @@ function callPost(posts) {
   const postModalEdit = feed.querySelectorAll(".btnEdit");
   postModalEdit.forEach((btn) => {
     btn.addEventListener("click", () => {
+      const postId = btn.value;
+      const divPostId = "cp-" + postId;
+      const divPost = feed.querySelector("#" + divPostId);
+      const oldPostContent = divPost.querySelector(".posts").textContent;
       const postModalEditTem = `
         <input type="checkbox" id="modalEdit">
         <label for="modalEdit" class="modalEdit"></label>
@@ -72,29 +76,25 @@ function callPost(posts) {
           <div class="contenedor-modalEditBox">
             <label for="modalEdit" id="closeModal" >X</label>
             <div class="contenido">
-            <textarea name="textarea" rows="5" id="postTextEdit" class="postTextEdit" placeholder="¿Que esta haciendo tu mascota?"></textarea>
+            <textarea name="textarea" rows="5" id="postTxt" class="postTextEdit" ></textarea>
               <button id="updateSave" class="updateSave">Guardar</button>
             </div>
           </div>
         </div>
-      `
-
-    const postId = btn.value;
-    const divPost = document.getElementById(postId);
-    console.log(divPost);
-    // const postFeed = divPost.querySelector(".posts");
-    const postTextEdit = document.getElementById(btn.value).firstElementChild.textContent;
-    console.log(postTextEdit)
-
+      `;
       feed.innerHTML = postModalEditTem;
+
+      // const postFeed = divPost.querySelector(".posts");
+      let postTextEdit = feed.querySelector("#postTxt");
+      postTextEdit.value = oldPostContent;
 
       const updateSave = document.querySelector("#updateSave");
       updateSave.addEventListener("click", () => {
-        updatePost(postId, postTextEdit);
+        updatePost(postId, postTextEdit.value);
         // document.getElementById("modalEdit").checked = false;
+        console.log(postTextEdit);
       });
     });
   });
   return feed;
-
 }
