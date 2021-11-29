@@ -52,21 +52,25 @@ export const wallPage = () => {
   showPost();
   wallContainer.querySelector("#logOut").addEventListener("click", () => {
     logOut();
-    });
-  wallContainer.querySelector("#createPostIcon").addEventListener("click", () => {
-      window.location.hash = "#/post";
   });
-  wallContainer.querySelector("#createPostIcon1").addEventListener("click", () => {
+  wallContainer
+    .querySelector("#createPostIcon")
+    .addEventListener("click", () => {
       window.location.hash = "#/post";
     });
-    wallContainer.querySelector("#logOut").addEventListener("click", () => {
-      logOut();
+  wallContainer
+    .querySelector("#createPostIcon1")
+    .addEventListener("click", () => {
+      window.location.hash = "#/post";
     });
-    wallContainer.querySelector("#logOut1").addEventListener("click", () => {
-      logOut();
-    });
-    wallContainer.querySelector("#refreshHome").addEventListener("click", () => {
-      window.location.hash = "#/wallPage";
-    });
+  wallContainer.querySelector("#logOut").addEventListener("click", () => {
+    logOut();
+  });
+  wallContainer.querySelector("#logOut1").addEventListener("click", () => {
+    logOut();
+  });
+  wallContainer.querySelector("#refreshHome").addEventListener("click", () => {
+    window.location.reload;
+  });
   return wallContainer;
 };
