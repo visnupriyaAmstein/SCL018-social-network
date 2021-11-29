@@ -204,11 +204,11 @@ body {
     opacity: 0;
     visibility: hidden;
   }
-  #modalEdit:checked ~ .modalEdit {
+  #modalEdit:checked ~.modalEdit{
     opacity: 1;
     visibility: visible;
   }
-  .contenedor-modalEditBox {
+  .contenedor-modalEditBox{
     width: 200px;
     height: 200px;
     margin: auto;
@@ -217,14 +217,14 @@ body {
     transition: all 500ms ease;
     position: relative;
   }
-  .contenedor-modalEditBox label {
+  .contenedor-modalEditBox label{
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
   }
-  #modalEdit {
-    display: none;
+  #modalEdit{
+   display: none;
   }
   .postTextEdit {
     width: 200px;
@@ -234,7 +234,6 @@ body {
   }
   
 }
-
 /* --- ipad pro --- */
 @media only screen and (max-width: 1024px) {
   .footer {
@@ -343,11 +342,11 @@ body {
     opacity: 0;
     visibility: hidden;
   }
-  #modalEdit:checked ~ .modalEdit {
+  #modalEdit:checked ~.modalEdit{
     opacity: 1;
     visibility: visible;
   }
-  .contenedor-modalEditBox {
+  .contenedor-modalEditBox{
     width: 200px;
     height: 200px;
     margin: auto;
@@ -356,14 +355,14 @@ body {
     transition: all 500ms ease;
     position: relative;
   }
-  .contenedor-modalEditBox label {
+  .contenedor-modalEditBox label{
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
   }
-  #modalEdit {
-    display: none;
+  #modalEdit{
+   display: none;
   }
   .postTextEdit {
     width: 200px;
@@ -513,3 +512,4 @@ body {
     border: none;
   }
 }
+
