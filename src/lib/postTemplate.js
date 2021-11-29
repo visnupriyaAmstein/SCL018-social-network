@@ -69,6 +69,7 @@ function callPost(posts) {
       const divPostId = "cp-" + postId;
       const divPost = feed.querySelector("#" + divPostId);
       const oldPostContent = divPost.querySelector(".posts").textContent;
+
       const postModalEditTem = `
         <input type="checkbox" id="modalEdit">
         <label for="modalEdit" class="modalEdit"></label>
@@ -81,13 +82,13 @@ function callPost(posts) {
             </div>
           </div>
         </div>
+
       `;
       feed.innerHTML = postModalEditTem;
 
       // const postFeed = divPost.querySelector(".posts");
       let postTextEdit = feed.querySelector("#postTxt");
       postTextEdit.value = oldPostContent;
-
       const updateSave = document.querySelector("#updateSave");
       updateSave.addEventListener("click", () => {
         updatePost(postId, postTextEdit.value);
@@ -98,3 +99,5 @@ function callPost(posts) {
   });
   return feed;
 }
+}
+
