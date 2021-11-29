@@ -13,7 +13,7 @@ body {
     align-items: center;
   }
   .wallHeader {
-    background-image: url(./Images/header32.png);
+    background-image: url(Images/header32.png);
     background-size: cover;
     height: 100px;
     width: 100vw;
@@ -109,7 +109,7 @@ body {
     margin-left: 0.5vw;
   }
   .btn-like {
-    background-image: url(images/no-like.png);
+    background-image: url(Images/no-like.png);
     background-repeat: no-repeat;
     background-size: 150%;
     width: 2.5vw;
@@ -131,7 +131,7 @@ body {
     width: 5vw;
   } */
   .ganadora {
-    background-image: url(images/like.png);
+    background-image: url(Images/like.png);
     background-repeat: no-repeat;
     background-size: 100%;
     width: 2.5vw;
@@ -175,7 +175,7 @@ body {
     align-items: center;
   }
   .btnDelete {
-    background-image: url(images/deletebtn.png);
+    background-image: url(Images/deletebtn.png);
     background-color: transparent;
     background-position: center center;
     width: 2vw;

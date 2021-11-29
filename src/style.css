@@ -89,7 +89,7 @@
     width: 80vw;
     height: 80vh;
     margin-top: 10vh;
-    background-image: url("images/computador1.png");
+    background-image: url(Images/computador1.png);
     background-repeat: no-repeat;
     position: fixed;
     background-size: cover;
@@ -130,7 +130,7 @@
     margin-left: 5vw;
   }
   .btnclose {
-    background-image: url(images/closeIcon.png);
+    background-image: url(Images/closeIcon.png);
     width: 4vw;
     height: 4vh;
     background-repeat: no-repeat;
@@ -171,7 +171,7 @@
     margin-left: 7vw;
   }
   .btnimg {
-    background-image: url(images/camara1.png);
+    background-image: url(Images/camara1.png);
     width: 6.4vw;
     height: 6.2vh;
     margin-left: 5vw;
@@ -188,7 +188,7 @@
   .introForm {
     width: 100vw;
     height: 100vh;
-    background-image: url("images/fondo-ipad.png");
+    background-image: url(Images/fondo-ipad.png);
     background-repeat: no-repeat;
     position: fixed;
     background-size: cover;
@@ -270,7 +270,7 @@
   .registerOne {
     width: 100vw;
     height: 100vh;
-    background-image: url("images/fondo-ipad.png");
+    background-image: url(Images/fondo-ipad.png);
     background-repeat: no-repeat;
     position: fixed;
     background-size: cover;
@@ -307,7 +307,7 @@
     margin-left: 5vw;
   }
   .btnclose {
-    background-image: url(images/closeIcon.png);
+    background-image: url(Images/closeIcon.png);
     width: 7vw;
     height: 3vh;
     background-repeat: no-repeat;
@@ -348,7 +348,7 @@
     margin-left: 15vw;
   }
   .btnimg {
-    background-image: url(images/camara1.png);
+    background-image: url(Images/camara1.png);
     width: 9vw;
     height: 5vh;
     margin-left: 3vw;
@@ -365,7 +365,7 @@
   .introForm {
     width: 100vw;
     height: 100vh;
-    background-image: url("images/fondo1.png");
+    background-image: url(Images/fondo1.png);
     background-repeat: no-repeat;
     position: fixed;
     background-size: cover;
@@ -447,7 +447,7 @@
   .registerOne {
     width: 100vw;
     height: 100vh;
-    background-image: url("images/fondo1.png");
+    background-image: url(Images/fondo1.png);
     background-repeat: no-repeat;
     position: fixed;
     background-size: cover;
@@ -486,7 +486,7 @@
     margin-top: 5px;
   }
   .btnclose {
-    background-image: url(images/closeIcon.png);
+    background-image: url(Images/closeIcon.png);
     width: 7vw;
     height: 3vh;
     background-repeat: no-repeat;
