@@ -1,4 +1,4 @@
-# Creando una Red Social
+# Petsbook Red social
 
 ## 1. Resumen del proyecto
 
@@ -8,15 +8,20 @@ En la generación 18 de Laboratoria se nos presentó el reto de la realización 
 
 Comenzamos con nuestra investigación y realizamos encuestas para determinar cuál era nuestro público objetivo y lo que querían ver en nuestra Red Social.
 
-{FOTO DE ENCUESTAS}
+ * [Click para ver encuesta](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/encuentas.png?raw=true)
 
 Posterior a eso, concluimos nuestras historias de usuario
 
-{FOTO DE HISTORIAS DE USUARIO}
+* Historias de usuarios
+ ![foto1](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/historias-usuarios.png?raw=true)
+ ![foto2](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/definicion-terminado.png?raw=true)
 
 Desarrollamos nuestros prototipos de baja y alta fidelidad, basándonos en nuestra investigación para hacer nuestra aplicación más cercana e intuitiva para nuestros usuarios.
 
-{FOTO PROTOTIPO ALTA Y BAJA}
+* [Click para ver imagen de baja fidelidad](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/baja-fidelidad.jpeg?raw=true)
+* [Click para ver imagen de alta fidelidad para celular ](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/alta-fidelidad.png?raw=true)
+* [Click para ver imagen de alta fidelidad para computador ](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/fidelidad-compu.png?raw=true)
+
 
 ## 3. Comportamiento de la interfaz de usuario
 
@@ -28,16 +33,21 @@ Ver los posts en Home.
 Crear un post.
 Eliminar el post, si así el usuario lo requiere.
 
+* visualización de Petsbook
+ ![foto3](https://github.com/visnupriyaAmstein/SCL018-social-network/blob/rama-visnu/src/imagenes-Readme/visualizacion.png?raw=true)
+
 ## 4. Test de usabilidad
 
 Luego de concluir nuestros criterios de aceptación, desarrollamos los test de usabilidad, teniendo como resultado una respuesta positiva de nuestros usuarios, logrando el objetivo de hacer fácil de usar e intuitiva nuestra Red Social.
 
 {LOOM}
 
-## 5. Creadores
+## 5. Link de Petsbook
+
+## 6. Creadores
 
 Este proyecto fue desarrollado por:
 
-Margarita Molina
-Visnuprinya Amstein
-Maria Fernanda Ramos
+* Margarita Molina
+* Visnupriya Amstein
+* Maria Fernanda Ramos

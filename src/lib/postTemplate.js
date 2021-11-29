@@ -62,10 +62,10 @@ function callPost(posts) {
     });
   });
 
-          const postModalEdit = feed.querySelectorAll(".btnEdit");
-      postModalEdit.forEach((btn) => {
-        btn.addEventListener("click", () =>{
-        const postModalEditTem = `
+  const postModalEdit = feed.querySelectorAll(".btnEdit");
+  postModalEdit.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const postModalEditTem = `
         <input type="checkbox" id="modalEdit">
         <label for="modalEdit" class="modalEdit"></label>
         <div class="modalEditBox">
@@ -86,14 +86,15 @@ function callPost(posts) {
     const postTextEdit = document.getElementById(btn.value).firstElementChild.textContent;
     console.log(postTextEdit)
 
-    feed.innerHTML = postModalEditTem;
+      feed.innerHTML = postModalEditTem;
 
-    const updateSave = document.querySelector("#updateSave");
-    updateSave.addEventListener("click", ()=>{
-      updatePost(postId, postTextEdit);
-      // document.getElementById("modalEdit").checked = false;
-    })
-  })
-})
-    return feed ;
+      const updateSave = document.querySelector("#updateSave");
+      updateSave.addEventListener("click", () => {
+        updatePost(postId, postTextEdit);
+        // document.getElementById("modalEdit").checked = false;
+      });
+    });
+  });
+  return feed;
+
 }
