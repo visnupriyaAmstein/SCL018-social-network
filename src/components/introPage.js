@@ -1,19 +1,18 @@
-import { userLogin } from "../lib/index.js";
-import { loginWithGoogle } from "../lib/index.js";
+import { userLogin, loginWithGoogle } from '../lib/index.js';
 
 export const introPage = () => {
   // Contenedor principal.
-  const introContainer = document.createElement("main");
-  introContainer.className = "introContainer";
-  introContainer.id = "introContainer";
+  const introContainer = document.createElement('main');
+  introContainer.className = 'introContainer';
+  introContainer.id = 'introContainer';
   // Encabezado
-  const header = document.createElement("header");
-  header.className = "introHeader";
+  const header = document.createElement('header');
+  header.className = 'introHeader';
   introContainer.appendChild(header);
 
   // sección
-  const section = document.createElement("section");
-  section.className = "introForm";
+  const section = document.createElement('section');
+  section.className = 'introForm';
   const intro = `
   <div class="container">
   <div class="container-iniciar"
@@ -39,17 +38,17 @@ export const introPage = () => {
   section.innerHTML = intro;
   introContainer.appendChild(section);
 
-  introContainer.querySelector("#btnLogin").addEventListener("click", () => {
-    const email1 = document.getElementById("mailLogin").value;
-    const password1 = document.getElementById("passwordLogin").value;
+  introContainer.querySelector('#btnLogin').addEventListener('click', () => {
+    const email1 = document.getElementById('mailLogin').value;
+    const password1 = document.getElementById('passwordLogin').value;
     userLogin(email1, password1);
   });
-  introContainer.querySelector("#register").addEventListener("click", () => {
-    window.location.hash = "#/registerPage";
+  introContainer.querySelector('#register').addEventListener('click', () => {
+    window.location.hash = '#/registerPage';
   });
-  introContainer.querySelector("#btnGoogle").addEventListener("click", () => {
+  introContainer.querySelector('#btnGoogle').addEventListener('click', () => {
     loginWithGoogle();
-    window.location.hash = "#/wallPage";
+    window.location.hash = '#/wallPage';
   });
   return introContainer;
 };

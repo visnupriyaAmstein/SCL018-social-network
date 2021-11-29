@@ -1,11 +1,11 @@
-import { routes } from "./paths.js";
-import { onAuth } from "./lib/index.js";
+import { routes } from './paths.js';
+import { onAuth } from './lib/index.js';
 
-window.addEventListener("load", () => {
+window.addEventListener('load', () => {
   onAuth();
   routes(window.location.hash);
 });
-window.addEventListener("hashchange", () => {
+window.addEventListener('hashchange', () => {
   onAuth();
   routes(window.location.hash);
 });
