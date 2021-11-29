@@ -99,5 +99,3 @@ function callPost(posts) {
   });
   return feed;
 }
-}
-
