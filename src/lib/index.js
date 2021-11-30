@@ -147,7 +147,6 @@ export const readData = (posts, callback) => {
       element.data = document.data();
       postContent.push({ element });
     });
-
     callback(postContent);
   });
 };

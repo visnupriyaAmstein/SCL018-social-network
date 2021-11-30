@@ -59,7 +59,6 @@ body {
     height: 60px;
     cursor: pointer;
   }
-
   .homeSection {
     display: flex;
     flex-direction: column;
@@ -67,6 +66,9 @@ body {
     height: 100vh;
     overflow-y: scroll;
     width: 100%;
+  }
+  .colores {
+    background-color: black;
   }
   .home-post {
     display: flex;
