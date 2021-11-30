@@ -91,7 +91,6 @@ function callPost(posts) {
       const updateSave = document.querySelector('#updateSave');
       updateSave.addEventListener('click', () => {
         updatePost(postId, postTextEdit.value);
-        // document.getElementById("modalEdit").checked = false;
         console.log(postTextEdit);
       });
 
