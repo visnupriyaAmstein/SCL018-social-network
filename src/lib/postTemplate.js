@@ -10,8 +10,7 @@ function callPost(posts) {
   feed.innerHTML = "";
 
   const myFunction = (postData) => {
-    //let iterator = Object.values(e);
-    const viewPost = `
+  const viewPost = `
         <div class="container-post" id="cp-${postData.element.id}">
           <div class="post" id=${postData.element.id}>
           <div class='user-name'>${postData.element.data.name}</div>
@@ -75,10 +74,10 @@ function callPost(posts) {
         <label for="modalEdit" class="modalEdit"></label>
         <div class="modalEditBox">
           <div class="contenedor-modalEditBox">
-            <label for="modalEdit" id="closeModal" >X</label>
             <div class="contenido">
             <textarea name="textarea" rows="5" id="postTxt" class="postTextEdit" ></textarea>
               <button id="updateSave" class="updateSave">Guardar</button>
+              <button id="updateCancel" class="updateCancel">Cancelar</button>
             </div>
           </div>
         </div>
@@ -86,18 +85,20 @@ function callPost(posts) {
       `;
       feed.innerHTML = postModalEditTem;
 
-      // const postFeed = divPost.querySelector(".posts");
       let postTextEdit = feed.querySelector("#postTxt");
       postTextEdit.value = oldPostContent;
       const updateSave = document.querySelector("#updateSave");
       updateSave.addEventListener("click", () => {
         updatePost(postId, postTextEdit.value);
-        // document.getElementById("modalEdit").checked = false;
         console.log(postTextEdit);
       });
+      const updateCancel = feed.querySelector("#updateCancel");
+      updateCancel.addEventListener("click", ()=>{
+        window.location.reload();
+      })
     });
   });
   return feed;
 }
-}
+
 

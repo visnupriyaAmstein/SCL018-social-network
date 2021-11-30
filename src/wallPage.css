@@ -212,7 +212,8 @@ body {
     width: 200px;
     height: 200px;
     margin: auto;
-    background: #fff;
+    background-color: #FFF0D9;
+    border:solid 4px #884F0B;
     box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
     transition: all 500ms ease;
     position: relative;
@@ -232,7 +233,26 @@ body {
     margin: auto;
     border: none;
   }
-  
+  .updateSave {
+    background-color: #f19258;
+    border: solid 1px #884f0b;
+    border-radius: 15px;
+    font-family: "Lilita One", cursive;
+    color: rgba(255, 254, 253, 0.835);
+    width: 80px;
+    height: 25px;
+    cursor: pointer;
+  }
+  .updateCancel {
+    background-color: #f19258;
+    border: solid 1px #884f0b;
+    border-radius: 15px;
+    font-family: "Lilita One", cursive;
+    color: rgba(255, 254, 253, 0.835);
+    width: 80px;
+    height: 25px;
+    cursor: pointer;
+  }
 }
 /* --- ipad pro --- */
 @media only screen and (max-width: 1024px) {
