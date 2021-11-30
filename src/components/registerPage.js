@@ -19,11 +19,12 @@ export const registerPage = () => {
   </div>
   </div>
    `;
+
   // evento para registrarte
-  registerOne.querySelector('#btnRegister').addEventListener('click', () => {
-    const name = document.getElementById('nameRegister').value;
-    const email = document.getElementById('mailRegister').value;
-    const password = document.getElementById('passwordRegister').value;
+  registerOne.querySelector("#btnRegister").addEventListener("click", () => {
+    const name = document.getElementById("nameRegister").value;
+    const email = document.getElementById("mailRegister").value;
+    const password = document.getElementById("passwordRegister").value;
     userRegister(email, password, name);
   });
   return registerOne;

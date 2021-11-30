@@ -1,13 +1,11 @@
-import {
-  readData, manageLike, auth, deletePost, updatePost,
-} from './index.js';
+import { readData, manageLike, auth, deletePost, updatePost } from "./index.js";
 
 function callPost(posts) {
   const feed = document.getElementById('homePost');
   feed.innerHTML = '';
 
+  // HTML dinamico para los post de wallpage
   const myFunction = (postData) => {
-    // let iterator = Object.values(e);
     const viewPost = `
         <div class="container-post" id="cp-${postData.element.id}">
           <div class="post" id=${postData.element.id}>
@@ -26,7 +24,7 @@ function callPost(posts) {
         </div>
         </div> 
         `;
-    let viewPost3 = '';
+    let viewPost3 = "";
 
     if (postData.element.data.userId === auth.currentUser.uid) {
       viewPost3 = `
@@ -43,13 +41,16 @@ function callPost(posts) {
   };
   posts.forEach(myFunction);
 
-  const deleteBtn = feed.querySelectorAll('.btnDelete');
+  // Evento para borrar post
+  const deleteBtn = feed.querySelectorAll(".btnDelete");
   deleteBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
       deletePost(btn.value);
     });
   });
-  const likeBtn = feed.querySelectorAll('.btn-like');
+
+  // Evento para dar like
+  const likeBtn = feed.querySelectorAll(".btn-like");
   likeBtn.forEach((btn) => {
     btn.addEventListener('click', () => {
       btn.classList.add('ganadora');
@@ -59,13 +60,14 @@ function callPost(posts) {
     });
   });
 
-  const postModalEdit = feed.querySelectorAll('.btnEdit');
+  // Modal y evento para editar post
+  const postModalEdit = feed.querySelectorAll(".btnEdit");
   postModalEdit.forEach((btn) => {
     btn.addEventListener('click', () => {
       const postId = btn.value;
       const divPostId = `cp-${postId}`;
       const divPost = feed.querySelector(`#${divPostId}`);
-      const oldPostContent = divPost.querySelector('.posts').textContent;
+      const oldPostContent = divPost.querySelector(".posts").textContent;
 
       const postModalEditTem = `
         <input type="checkbox" id="modalEdit">
@@ -84,7 +86,7 @@ function callPost(posts) {
       feed.innerHTML = postModalEditTem;
 
       // const postFeed = divPost.querySelector(".posts");
-      const postTextEdit = feed.querySelector('#postTxt');
+      const postTextEdit = feed.querySelector("#postTxt");
       postTextEdit.value = oldPostContent;
       const updateSave = document.querySelector('#updateSave');
       updateSave.addEventListener('click', () => {
@@ -92,8 +94,9 @@ function callPost(posts) {
         // document.getElementById("modalEdit").checked = false;
         console.log(postTextEdit);
       });
-      const updateCancel = feed.querySelector('#updateCancel');
-      updateCancel.addEventListener('click', () => {
+
+      const updateCancel = feed.querySelector("#updateCancel");
+      updateCancel.addEventListener("click", () => {
         window.location.reload();
       });
     });
@@ -101,11 +104,5 @@ function callPost(posts) {
   return feed;
 }
 export const showPost = () => {
-  readData('posts', callPost);
+  readData("posts", callPost);
 };
-
-// HTML dinamico para los post de wallpage
-// Evento para borrar post
-// Evento para dar like
-// btn.classList.add('red-like');
-// Modal y evento para editar post

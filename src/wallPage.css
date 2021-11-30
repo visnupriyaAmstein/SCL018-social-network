@@ -132,7 +132,7 @@ body {
     margin-left: 0.5vw;
     width: 5vw;
   } */
-  .red-like {
+  .ganadora {
     background-image: url("Images/like.png");
     background-repeat: no-repeat;
     background-size: 100%;
@@ -534,5 +534,3 @@ body {
     border: none;
   }
 }
-
-

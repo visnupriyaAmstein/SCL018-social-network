@@ -1,4 +1,4 @@
-import { userLogin, loginWithGoogle } from '../lib/index.js';
+import { userLogin, loginWithGoogle } from "../lib/index.js";
 
 export const introPage = () => {
   // Contenedor principal.

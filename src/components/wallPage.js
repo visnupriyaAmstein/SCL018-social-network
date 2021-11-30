@@ -52,7 +52,8 @@ export const wallPage = () => {
   showPost();
 
   // funciones para cerrar sesión , botón crear post y refrescar wallpage
-  wallContainer.querySelector('#logOut').addEventListener('click', () => {
+  wallContainer.querySelector("#logOut").addEventListener("click", () => {
+
     logOut();
   });
   wallContainer.querySelector('#createPostIcon').addEventListener('click', () => {

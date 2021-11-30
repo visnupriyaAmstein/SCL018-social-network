@@ -2,8 +2,8 @@ import { addData } from '../lib/index.js';
 
 export const postsModal = () => {
   // contenedor padre
-  const containerPosts = document.createElement('main');
-  containerPosts.className = 'containerPost';
+  const containerPosts = document.createElement("main");
+  containerPosts.className = "containerPost";
 
   const headerModal = document.createElement('header');
   headerModal.className = 'headerModal';
@@ -33,9 +33,10 @@ export const postsModal = () => {
   `;
 
   containerPosts.appendChild(sectionPost);
+
   // evento para publicar post
-  containerPosts.querySelector('#btnToPost').addEventListener('click', () => {
-    const postInput = document.getElementById('postText').value;
+  containerPosts.querySelector("#btnToPost").addEventListener("click", () => {
+    const postInput = document.getElementById("postText").value;
     addData(postInput);
     window.location.hash = '#/wallPage';
   });
