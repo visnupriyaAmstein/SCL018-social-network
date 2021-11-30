@@ -1,8 +1,8 @@
 import { readData, manageLike, auth, deletePost, updatePost } from "./index.js";
 
 function callPost(posts) {
-  const feed = document.getElementById("homePost");
-  feed.innerHTML = "";
+  const feed = document.getElementById('homePost');
+  feed.innerHTML = '';
 
   // HTML dinamico para los post de wallpage
   const myFunction = (postData) => {
@@ -44,7 +44,7 @@ function callPost(posts) {
   // Evento para borrar post
   const deleteBtn = feed.querySelectorAll(".btnDelete");
   deleteBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener('click', () => {
       deletePost(btn.value);
     });
   });
@@ -52,8 +52,8 @@ function callPost(posts) {
   // Evento para dar like
   const likeBtn = feed.querySelectorAll(".btn-like");
   likeBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.classList.add("ganadora");
+    btn.addEventListener('click', () => {
+      btn.classList.add('ganadora');
       const postId = btn.value;
       const userId = auth.currentUser.uid;
       manageLike(postId, userId);
@@ -63,7 +63,7 @@ function callPost(posts) {
   // Modal y evento para editar post
   const postModalEdit = feed.querySelectorAll(".btnEdit");
   postModalEdit.forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener('click', () => {
       const postId = btn.value;
       const divPostId = `cp-${postId}`;
       const divPost = feed.querySelector(`#${divPostId}`);
@@ -88,12 +88,13 @@ function callPost(posts) {
       // const postFeed = divPost.querySelector(".posts");
       const postTextEdit = feed.querySelector("#postTxt");
       postTextEdit.value = oldPostContent;
-      const updateSave = document.querySelector("#updateSave");
-      updateSave.addEventListener("click", () => {
+      const updateSave = document.querySelector('#updateSave');
+      updateSave.addEventListener('click', () => {
         updatePost(postId, postTextEdit.value);
         // document.getElementById("modalEdit").checked = false;
         console.log(postTextEdit);
       });
+
       const updateCancel = feed.querySelector("#updateCancel");
       updateCancel.addEventListener("click", () => {
         window.location.reload();

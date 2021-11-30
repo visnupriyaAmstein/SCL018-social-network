@@ -59,7 +59,6 @@ body {
     height: 60px;
     cursor: pointer;
   }
-
   .homeSection {
     display: flex;
     flex-direction: column;
@@ -67,6 +66,9 @@ body {
     height: 100vh;
     overflow-y: scroll;
     width: 100%;
+  }
+  .colores {
+    background-color: black;
   }
   .home-post {
     display: flex;
@@ -319,7 +321,7 @@ body {
     background-position: center center;
     border: none;
   }
-  .ganadora {
+  .red-like {
     background-size: 120%;
     width: 3vw;
     height: 3vh;
@@ -468,7 +470,7 @@ body {
     width: 6vw;
     height: 3vh;
   }
-  .ganadora {
+  .red-like {
     background-size: 100%;
     width: 2vw;
     height: 2vh;
