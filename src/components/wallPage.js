@@ -50,6 +50,8 @@ export const wallPage = () => {
   home.innerHTML = post;
   wallContainer.appendChild(home);
   showPost();
+
+  // funciones para cerrar sesión , botón crear post y refrescar wallpage
   wallContainer.querySelector("#logOut").addEventListener("click", () => {
     logOut();
   });

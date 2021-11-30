@@ -20,6 +20,7 @@ export const registerPage = () => {
   </div>
    `;
 
+  // evento para registrarte
   registerOne.querySelector("#btnRegister").addEventListener("click", () => {
     const name = document.getElementById("nameRegister").value;
     const email = document.getElementById("mailRegister").value;

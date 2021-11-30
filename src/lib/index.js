@@ -41,6 +41,7 @@ const provider = new GoogleAuthProvider(app);
 const db = getFirestore();
 export const user = auth.currentUser;
 
+// Función para registrarte
 export const userRegister = (email, password, name) => {
   createUserWithEmailAndPassword(auth, email, password)
     .then((userCredential) => {
@@ -59,6 +60,8 @@ export const userRegister = (email, password, name) => {
       console.log(errorCode + errorMessage);
     });
 };
+
+// Función para iniciar sesión
 export const userLogin = (email1, password1) => {
   signInWithEmailAndPassword(auth, email1, password1)
     .then((userCredential) => {
@@ -76,6 +79,7 @@ export const userLogin = (email1, password1) => {
     });
 };
 
+// Iniciar sesión con Google
 export const loginWithGoogle = () => {
   signInWithRedirect(auth, provider);
   getRedirectResult(auth)
@@ -93,6 +97,7 @@ export const loginWithGoogle = () => {
     });
 };
 
+//  Cerrar sesión en la App
 export const logOut = () => {
   const auth = getAuth();
   signOut(auth)
@@ -103,6 +108,8 @@ export const logOut = () => {
       console.log(error);
     });
 };
+
+// Observador
 export const onAuth = () => {
   onAuthStateChanged(auth, (user) => {
     if (user) {
@@ -116,6 +123,7 @@ export const onAuth = () => {
   });
 };
 
+// Función para agregar datos a la colección
 export const addData = async (postInput) => {
   console.log(postInput);
   const docRef = await addDoc(collection(db, "posts"), {
@@ -130,6 +138,7 @@ export const addData = async (postInput) => {
   return docRef;
 };
 
+// Función para leer los datos de la colección
 export const readData = (posts, callback) => {
   const q = query(collection(db, posts), orderBy("datePosted", "desc"));
   onSnapshot(q, (querySnapshot) => {
@@ -145,6 +154,7 @@ export const readData = (posts, callback) => {
   });
 };
 
+// función para dar like y contador de los like
 export const manageLike = async (id, likesUpdate) => {
   const likesRef = doc(db, "posts", id);
   const docSnap = await getDoc(likesRef);
@@ -164,11 +174,13 @@ export const manageLike = async (id, likesUpdate) => {
   }
 };
 
+// función para borrar post
 export const deletePost = async (id) => {
   alert("¿Estas seguro de querer borrar tu post?");
   await deleteDoc(doc(db, "posts", id));
 };
 
+// función para editar post
 export const updatePost = async (id, postTextEdit) => {
   const postEdit = doc(db, "posts", id);
   await updateDoc(postEdit, {
