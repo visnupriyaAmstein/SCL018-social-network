@@ -13,7 +13,7 @@ body {
     align-items: center;
   }
   .wallHeader {
-    background-image: url(./Images/header32.png);
+    background-image: url(Images/header32.png);
     background-size: cover;
     height: 100px;
     width: 100vw;
@@ -59,7 +59,6 @@ body {
     height: 60px;
     cursor: pointer;
   }
-
   .homeSection {
     display: flex;
     flex-direction: column;
@@ -67,6 +66,9 @@ body {
     height: 100vh;
     overflow-y: scroll;
     width: 100%;
+  }
+  .colores {
+    background-color: black;
   }
   .home-post {
     display: flex;
@@ -109,7 +111,7 @@ body {
     margin-left: 0.5vw;
   }
   .btn-like {
-    background-image: url(images/no-like.png);
+    background-image: url("Images/no-like.png");
     background-repeat: no-repeat;
     background-size: 150%;
     width: 2.5vw;
@@ -131,7 +133,7 @@ body {
     width: 5vw;
   } */
   .ganadora {
-    background-image: url(images/like.png);
+    background-image: url("Images/like.png");
     background-repeat: no-repeat;
     background-size: 100%;
     width: 2.5vw;
@@ -175,7 +177,7 @@ body {
     align-items: center;
   }
   .btnDelete {
-    background-image: url(images/deletebtn.png);
+    background-image: url("Images/deletebtn.png");
     background-color: transparent;
     background-position: center center;
     width: 2vw;
@@ -204,28 +206,28 @@ body {
     opacity: 0;
     visibility: hidden;
   }
-  #modalEdit:checked ~.modalEdit{
+  #modalEdit:checked ~ .modalEdit {
     opacity: 1;
     visibility: visible;
   }
-  .contenedor-modalEditBox{
+  .contenedor-modalEditBox {
     width: 200px;
     height: 200px;
     margin: auto;
-    background-color: #FFF0D9;
-    border:solid 4px #884F0B;
+    background-color: #fff0d9;
+    border: solid 4px #884f0b;
     box-shadow: 1px 7px 25px rgba(0, 0, 0, 0.6);
     transition: all 500ms ease;
     position: relative;
   }
-  .contenedor-modalEditBox label{
+  .contenedor-modalEditBox label {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
   }
-  #modalEdit{
-   display: none;
+  #modalEdit {
+    display: none;
   }
   .postTextEdit {
     width: 200px;
@@ -319,7 +321,7 @@ body {
     background-position: center center;
     border: none;
   }
-  .ganadora {
+  .red-like {
     background-size: 120%;
     width: 3vw;
     height: 3vh;
@@ -362,11 +364,11 @@ body {
     opacity: 0;
     visibility: hidden;
   }
-  #modalEdit:checked ~.modalEdit{
+  #modalEdit:checked ~ .modalEdit {
     opacity: 1;
     visibility: visible;
   }
-  .contenedor-modalEditBox{
+  .contenedor-modalEditBox {
     width: 200px;
     height: 200px;
     margin: auto;
@@ -375,14 +377,14 @@ body {
     transition: all 500ms ease;
     position: relative;
   }
-  .contenedor-modalEditBox label{
+  .contenedor-modalEditBox label {
     position: absolute;
     top: 10px;
     right: 10px;
     cursor: pointer;
   }
-  #modalEdit{
-   display: none;
+  #modalEdit {
+    display: none;
   }
   .postTextEdit {
     width: 200px;
@@ -468,7 +470,7 @@ body {
     width: 6vw;
     height: 3vh;
   }
-  .ganadora {
+  .red-like {
     background-size: 100%;
     width: 2vw;
     height: 2vh;
@@ -532,4 +534,3 @@ body {
     border: none;
   }
 }
-

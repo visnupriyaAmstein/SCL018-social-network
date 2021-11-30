@@ -1,9 +1,9 @@
-import { userRegister } from "../lib/index.js";
+import { userRegister } from '../lib/index.js';
 
 export const registerPage = () => {
-  const registerOne = document.createElement("section");
-  registerOne.className = "registerOne";
-  registerOne.id = "registerOne";
+  const registerOne = document.createElement('section');
+  registerOne.className = 'registerOne';
+  registerOne.id = 'registerOne';
   registerOne.innerHTML = `
   <div class="container">
   <div class="container-register">
@@ -20,6 +20,7 @@ export const registerPage = () => {
   </div>
    `;
 
+  // evento para registrarte
   registerOne.querySelector("#btnRegister").addEventListener("click", () => {
     const name = document.getElementById("nameRegister").value;
     const email = document.getElementById("mailRegister").value;

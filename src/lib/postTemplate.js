@@ -1,16 +1,12 @@
-import { readData, manageLike } from "./index.js";
-import { auth, deletePost, updatePost } from "./index.js";
-
-export const showPost = () => {
-  readData("posts", callPost);
-};
+import { readData, manageLike, auth, deletePost, updatePost } from "./index.js";
 
 function callPost(posts) {
-  const feed = document.getElementById("homePost");
-  feed.innerHTML = "";
+  const feed = document.getElementById('homePost');
+  feed.innerHTML = '';
 
+  // HTML dinamico para los post de wallpage
   const myFunction = (postData) => {
-  const viewPost = `
+    const viewPost = `
         <div class="container-post" id="cp-${postData.element.id}">
           <div class="post" id=${postData.element.id}>
           <div class='user-name'>${postData.element.data.name}</div>
@@ -28,7 +24,7 @@ function callPost(posts) {
         </div>
         </div> 
         `;
-    let viewPost3 = ``;
+    let viewPost3 = "";
 
     if (postData.element.data.userId === auth.currentUser.uid) {
       viewPost3 = `
@@ -45,28 +41,32 @@ function callPost(posts) {
   };
   posts.forEach(myFunction);
 
+  // Evento para borrar post
   const deleteBtn = feed.querySelectorAll(".btnDelete");
   deleteBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener('click', () => {
       deletePost(btn.value);
     });
   });
+
+  // Evento para dar like
   const likeBtn = feed.querySelectorAll(".btn-like");
   likeBtn.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      btn.classList.add("ganadora");
+    btn.addEventListener('click', () => {
+      btn.classList.add('ganadora');
       const postId = btn.value;
       const userId = auth.currentUser.uid;
       manageLike(postId, userId);
     });
   });
 
+  // Modal y evento para editar post
   const postModalEdit = feed.querySelectorAll(".btnEdit");
   postModalEdit.forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener('click', () => {
       const postId = btn.value;
-      const divPostId = "cp-" + postId;
-      const divPost = feed.querySelector("#" + divPostId);
+      const divPostId = `cp-${postId}`;
+      const divPost = feed.querySelector(`#${divPostId}`);
       const oldPostContent = divPost.querySelector(".posts").textContent;
 
       const postModalEditTem = `
@@ -85,20 +85,23 @@ function callPost(posts) {
       `;
       feed.innerHTML = postModalEditTem;
 
-      let postTextEdit = feed.querySelector("#postTxt");
+      // const postFeed = divPost.querySelector(".posts");
+      const postTextEdit = feed.querySelector("#postTxt");
       postTextEdit.value = oldPostContent;
-      const updateSave = document.querySelector("#updateSave");
-      updateSave.addEventListener("click", () => {
+      const updateSave = document.querySelector('#updateSave');
+      updateSave.addEventListener('click', () => {
         updatePost(postId, postTextEdit.value);
         console.log(postTextEdit);
       });
+
       const updateCancel = feed.querySelector("#updateCancel");
-      updateCancel.addEventListener("click", ()=>{
+      updateCancel.addEventListener("click", () => {
         window.location.reload();
-      })
+      });
     });
   });
   return feed;
 }
-
-
+export const showPost = () => {
+  readData("posts", callPost);
+};
